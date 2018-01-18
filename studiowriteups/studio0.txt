@@ -4,7 +4,7 @@ Your TA's name:
 
 Students in your studio group:
 
-    Name        Student ID (begins with a 4)
+    Name  Gillian Laming      Student ID 457507
 	
 1.
 2.
@@ -48,12 +48,19 @@ Question A5:
 	while leaving other calls to ticker.tick() that you just placed in run()?
 	The graphs look linear because the nested loop is no longer being used to count ticks, which is 
 	how the linear one recorded ticks.
+	
 Question B1:
 	What do you see? How do the curves reflect the code inside AddsTwoNumbers?
 	Do you think the value of n matters here in terms of the time it takes to perform the operation?
 	Why or why not?
-	
+	For the number of ticks, it begins at 0 when n is zero (because the code returns), and is otherwise 
+	a horizontal line. The time plot resembles a horizontal line, but has more fluctuation than the ticks 
+	graph had. The ticks graph shows that the number of ticks does not rely on n, and thus is horizontal. There are
+	more factors in determining the time it takes to execute the function, which is why the time graph fluctuates. 
+	The value of n doesn't seem to matter in terms of the time it takes to execute, because the plot is nearly 
+	horizontal.
 Question B2:
+
 	What do the data and plot tell you about the time it takes to allocate an array of n integers?
 	Is it reasonable to say that the line of code
 
@@ -61,12 +68,22 @@ Question B2:
  		
 	takes a constant amount of time, independent of the value of this.n?
 	
+	The plot shows that the time increases as n increases, so the line of code does not 
+	take a constant amount of time (it is dependent on n). The plot is linear, so time increases
+	constantly as n increases.
+	
 Question B3:
 	Do the ticks agree in shape with the time we measured in running the Allocates code?
+	
+	The ticks plot is a horizontal line which does not agree in shape with the time plot. 
+	this means that although time is dependent on n, the number of ticks is independent of n. 
 	
 Question B4:
 	Are the plots more similar to each other than before?
 	What does this tell you about how much time it takes to allocate an array of n integers?
+	
+	The plots are much more similar than they were before. Both plots are increases as n increases,
+	which means that the time it takes to allocate an array of n integers depends on n.
 	
 Question B5:
 	Which group do you expect to finish first?
@@ -80,17 +97,31 @@ Question B5:
 		
 	If you are not sure, take a look the link from the assignment web page.
 	
+	I would expect the decimal team to finish first because the time it takes them to write is dependent on how many
+	digits is in the number (log base 10), whereas it would take the talliers n amount of time because they would need to 
+	write n tallies. The decimal notation is more efficient when you are recording one number, but the
+	tally notation is more efficient when you are simply adding one to the number you originally had (because you only need 
+	one stroke as opposed to erasing and then recording a new decimal).
+	
 Question D1:
 	How would you describe the curve you see?
 	As a team, think about possible polynomial functions that could generate such a curve.
 	Write your answer here:
 	
+	The curve looks like it could be quadratic because it increases at an increasing rate with respect
+	to n. perhaps the function is x^2. 
+	
 Question E1:
 	What is the closed form solution for T(n)?
+	T(n) = (n(n+1)/2)
 	
 Question E2:
 	What is the closed form solution for T(n)?
 	Can you express this result in terms of n, as well as k?
 	Write your answer here:
+	
+	2^(k+1) - 1     in terms of k
+	
+	2n-1           	in terms of n
 	
 	

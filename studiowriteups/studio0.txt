@@ -17,26 +17,37 @@ Below each question, type in your short, to-the-point answers.
 
 Question A1: 
 	What do you see in both plots? 
+	Both plots are increasing with respect to n.
 	Are there any differences between the two?
+	The linear graph is linear and the quadratic graph is quadratic.
 	What could account for those differences?
+	For the quadratic graph, as n increases the number of ticks increases at an increasing rate, 
+	thus giving it a quadratic shape. Quadratic.java uses a nested loop, whereas the linear.java only uses 
+	one loop.
 	
 Discuss this (and all your responses for this assignment) with your TA as you go.
 
 Question A2:
 	Why do the times provided for Quadratic produce such a nice plot, while the original values of Linear did not?
-	
+	for the Linear, the cost of running the program was so low that it wasn't able to be measured. Since Quadratic is
+	increasing faster, the outputs become larger and are therefore able to be measured. 
 Question A3: 
 	From the runs you have tried so far, how does the placement of ticker.tick() calls affect the plots you see? 
 	In particular, do the changes affect the shapes of the curves, the values plotted, or both
+	The shape of the plots looked about the same, but the number of ticks went way up, and the time went down.
+	The placement of ticker tick calls didn't seem to affect the plots at all: they consistently looked the same.
 	
 Question A4: 
 	In terms of n, how would you characterize, in the most simple terms, 
 	the time and ticks curves that have been generated so far?
+	Generally, all of the time and tick curves have been quadratic. As n increases, the number of ticks are also
+	increasing. 
 		
 Question A5: 
 	What would happen if you deleted all ticker.tick() calls in the innermost loop,
 	while leaving other calls to ticker.tick() that you just placed in run()?
-	
+	The graphs look linear because the nested loop is no longer being used to count ticks, which is 
+	how the linear one recorded ticks.
 Question B1:
 	What do you see? How do the curves reflect the code inside AddsTwoNumbers?
 	Do you think the value of n matters here in terms of the time it takes to perform the operation?

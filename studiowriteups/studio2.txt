@@ -7,7 +7,7 @@ Your TA's name:
 Students in your studio group:
 
     Name        Student ID (begins with a 4)
-	
+	Gillian Laming 457507
 1.
 2.
 3.
@@ -21,21 +21,43 @@ Part A
 
 What do you see in the plots for ticks and time?
 
+Both curves are increasing at an increasing rate
+
 How would you characterize those curves?
 
+They both appear to be quadratic
+
 Based on the current code for addLast, why do you see this behavior?
+Because each time a new element is added to the linked list, the computer has to go through each element 
+already in the list
 
 Part B
 
 What behavior do you see now for appending n items to a list if you use a tail reference?
 
+The graph is linear because it does not have to iterate through n times. The time is 0.
+
 While we have reasoned so far only about time, if we are adding n elements to the end of a list, what is the asymptotic complexity of the additional space required when using the tail reference?
 
+When using a tail reference, the computer does not have to iterate thru all of the elements every time,
+so the asymptotic complexity is O(n). 
+
 Under what conditions would you recommend using a linked list with a tail reference vs. a linked list without at tail reference?
+
+If you are appending to the end of a linked list, it would be faster to use a linked list with a tail reference 
+because that way it would not have to iterate through the entire linked list. For some linked list functions, like
+appending to the beginning of the list, having a tail reference will not affect the amount of time it takes, 
+but it will also not slow down the runtime. 
 
 Part C
 
 Why does getSize() take the time it does?
 
+getSize() takes the time that it does because it has to go through each element in the list
+and add to count so it takes n amount of time to execute. 
+
 How did you achieve Θ(1) performance for getSize()?
+
+By creating a new instance variable count and incrementing count each time the tail changes, you can achieve
+bigTheta(1) because when you get to getSize, you simply return this.count.
 

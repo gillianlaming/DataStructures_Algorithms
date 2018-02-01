@@ -13,10 +13,14 @@ public class LinkedListWithTail<T> implements List<T> {
 	
 	private ListNode<T> head;
 	private Ticker ticker;
+	private ListNode<T> tail;
+	private int count;
 	
 	public LinkedListWithTail(Ticker ticker) {
 		this.head = null;   // nothing in our list yet
 		this.ticker = ticker;
+		this.tail = null;
+		this.count = 0;
 	}
 
 	/**
@@ -34,7 +38,8 @@ public class LinkedListWithTail<T> implements List<T> {
 			ListNode<T> p = new ListNode<T>();
 			p.value = thing;
 			head = p;
-			ticker.tick(3);  // for the 3 statements above
+			tail = p;
+			ticker.tick(4);  // for the 3 statements above
 		}
 		else {
 			ListNode<T> q = new ListNode<T>();
@@ -45,17 +50,17 @@ public class LinkedListWithTail<T> implements List<T> {
 			// Modify this code using your new tail reference
 			//  and get rid of this loop!
 			//
-			ListNode<T> p = head;
-			while (p.next != null) {
-				ticker.tick();
-				p = p.next;
+			tail.next = q;
+			this.tail = q;
+			this.count = this.count + 1;
+			
 			}
 			//  p is where it needs to be slide 201
-			p.next = q;
-			ticker.tick(3);  // for the 3 statements not in the loop
+			
+			ticker.tick(5);  // for the 3 statements not in the loop
 		}
 		
-	}
+	
 	
 	/**
 	 * Modify this method so that getting the size of this list
@@ -63,12 +68,12 @@ public class LinkedListWithTail<T> implements List<T> {
 	 */
 	@Override
 	public int getSize() {
-		int ans = 0;
-		for (ListNode<T> p = this.head; p != null; p = p.next) {
-			ans = ans + 1;
-			ticker.tick();
-		}
-		return ans;
+		return this.count;
+//		for (ListNode<T> p = this.head; p != null; p = this.tail) {
+//			ans = ans + 1;
+//			ticker.tick();
+//		}
+		//return ans;
 	}
 
 	/**

@@ -5,7 +5,7 @@ import timing.Ticker;
 /**
  * Your assignment is to modify this class so it uses a tail reference
  * 
- * @author roncytron and WhoAreYou
+ * @author roncytron and Gillian Laming
  *
  * @param <T>
  */

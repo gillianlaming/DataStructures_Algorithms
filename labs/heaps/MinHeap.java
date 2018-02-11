@@ -32,7 +32,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	//
 	// Here begin the methods described in lecture
 	//
-	
+
 	/**
 	 * Insert a new thing into the heap.  As discussed in lecture, it
 	 *   belongs at the end of objects already in the array.  You can avoid
@@ -63,9 +63,10 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		//
 		// You have to now put ans into the heap array
 		//   Recall in class we reduced insert to decrease
-		//
-		// FIXME
-		//
+
+		array[size] = ans;
+		this.decrease(size); //***remember this**
+
 		return ans;
 	}
 
@@ -96,12 +97,40 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	 *     decreased in value
 	 */
 	void decrease(int loc) {
-		//
-		// As described in lecture
-		//
-		
+
+
+		Decreaser<T> parent= array[loc/2]; 
+
+		Decreaser<T> child = array[loc];
+
+		if (loc > 1) {
+
+			if (parent.getValue().compareTo(child.getValue())  > 0 ){  //while the parent node is bigger than the new node
+
+				moveItem(child.loc, parent.loc); //swap the two nodes
+				decrease(loc/2);
+
+			}
+		}
+		else {
+			return;
+		}
+
 	}
-	
+
+	/**
+	 * int from: the inital location of the element
+	 * int to: the desired location of the element
+	 */
+	private void moveItem(int from, int to) {		
+		Decreaser<T> d = array[from];
+		array[from] = array[to];
+		array[to] = d;
+		array[to].loc = to;
+		array[from].loc = from;
+
+	}
+
 	/**
 	 * Described in lecture, this method will return a minimum element from
 	 *    the heap.  The hole that is created is handled as described in
@@ -116,9 +145,14 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		//    Fix up the heap as described in lecture.
 		//    Be sure to store null in an array slot if it is no longer
 		//      part of the active heap
-		//
-		// FIXME
-		//
+		// 
+		array[1] = array[size];
+		array[1].loc = 1;
+		array[size] = null;
+		size--; //you remove something from an array, so you have to change the size
+
+		this.heapify(1);
+
 		return ans;
 	}
 
@@ -130,12 +164,66 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	 * @param where the index into the array where the parent lives
 	 */
 	private void heapify(int where) {
-		//
-		// As described in lecture
-		//  FIXME
-		//
+
+		if ((array[where] == null) || (where > size)) { 
+			return;
+		}
+
+		if((2*where+1) <= size) { //if has 2 children
+
+			Decreaser<T> leftKid = array[2*where];
+			Decreaser<T> rightKid = array[2*where + 1];
+			Decreaser <T> parent = array[where];
+			int smallerKid = 0;
+
+			if ((leftKid.getValue().compareTo(rightKid.getValue()) > 0)) { 
+				smallerKid = 2*where + 1;
+			}
+			else {
+				smallerKid = 2*where;
+			}
+			if (array[smallerKid].getValue().compareTo(parent.getValue()) < 0) {
+				moveItem(where, smallerKid);
+				this.heapify(smallerKid);
+			}
+
+		}
+
+		else if (2*where > size || (array[2*where] == null)) { //if no children
+			return;
+		}
+		else if (array[2*where].getValue().compareTo(array[where].getValue()) <0 ) {
+			moveItem(where, 2*where);
+			this.heapify(2*where);
+		}
+
+		//		//assuming there are 2 children
+		//		if ((array[where].getValue().compareTo(array[2*where].getValue()) > 0) || (array[where].getValue().compareTo(array[2*where + 1].getValue()) > 0)) { //this is saying that the parent cell is greater than either child
+		//			//now, need to swap loc of parent and child with smaller value
+		//			int temp = array[where].loc;
+		//			//array[where].loc = compareChildren(where).loc;
+		//			//compareChildren(where).loc = temp;
+		//			
+		//			//array[where] = compareChildren(where);
+		//			
 	}
-	
+
+
+	//	/**
+	//	 * 
+	//	 * @param where: the location of the parent cell
+	//	 * @return the child with the greater value
+	//	 */
+	//	private Decreaser<T> compareChildren(int where){
+	//		//i think i need a while loop so that it will run until it meets the condition
+	//		if (array[2*where].getValue().compareTo(array[2*where + 1].getValue()) <0 ) {
+	//			return array[2*where];
+	//		}
+	//		else {
+	//			return array[2*where + 1];
+	//		}
+	//	}
+	//	
 	/**
 	 * Does the heap contain anything currently?
 	 * I implemented this for you.  Really, no need to thank me!
@@ -143,11 +231,11 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	public boolean isEmpty() {
 		return size == 0;
 	}
-	
+
 	//
 	// End of methods described in lecture
 	//
-	
+
 	//
 	// The methods that follow are necessary for the debugging
 	//   infrastructure.
@@ -177,11 +265,11 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	public int size() {
 		return this.size;
 	}
-	
+
 	public int capacity() {
 		return this.array.length-1;
 	}
-	
+
 
 	/**
 	 * The commented out code shows you the contents of the array,
@@ -189,11 +277,11 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	 *   output.
 	 */
 	public String toString() {
-//		String ans = "";
-//		for (int i=1; i <= size; ++i) {
-//			ans = ans + i + " " + array[i] + "\n";
-//		}
-//		return ans;
+		//		String ans = "";
+		//		for (int i=1; i <= size; ++i) {
+		//			ans = ans + i + " " + array[i] + "\n";
+		//		}
+		//		return ans;
 		return HeapToStrings.toTree(this);
 	}
 

@@ -123,9 +123,9 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	 * int to: the desired location of the element
 	 */
 	private void moveItem(int from, int to) {		
-		Decreaser<T> d = array[from];
+		Decreaser<T> temp = array[from];
 		array[from] = array[to];
-		array[to] = d;
+		array[to] = temp;
 		array[to].loc = to;
 		array[from].loc = from;
 

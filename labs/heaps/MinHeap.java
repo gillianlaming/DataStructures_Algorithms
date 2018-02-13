@@ -66,7 +66,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 
 		array[size] = ans;
 		this.decrease(size); //***remember this**
-
+		ticker.tick(3);
 		return ans;
 	}
 
@@ -109,6 +109,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 
 				moveItem(child.loc, parent.loc); //swap the two nodes
 				decrease(loc/2);
+				ticker.tick(2);
 
 			}
 		}
@@ -128,6 +129,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		array[to] = temp;
 		array[to].loc = to;
 		array[from].loc = from;
+		ticker.tick(5);
 
 	}
 
@@ -150,9 +152,8 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		array[1].loc = 1;
 		array[size] = null;
 		size--; //you remove something from an array, so you have to change the size
-
 		this.heapify(1);
-
+		ticker.tick(5);
 		return ans;
 	}
 
@@ -174,10 +175,13 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 			Decreaser<T> leftKid = array[2*where];
 			Decreaser<T> rightKid = array[2*where + 1];
 			Decreaser <T> parent = array[where];
+			ticker.tick(3);
 			int smallerKid = 0;
 
 			if ((leftKid.getValue().compareTo(rightKid.getValue()) > 0)) { 
 				smallerKid = 2*where + 1;
+				ticker.tick();
+
 			}
 			else {
 				smallerKid = 2*where;
@@ -185,6 +189,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 			if (array[smallerKid].getValue().compareTo(parent.getValue()) < 0) {
 				moveItem(where, smallerKid);
 				this.heapify(smallerKid);
+				ticker.tick(2);
 			}
 
 		}
@@ -195,35 +200,14 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		else if (array[2*where].getValue().compareTo(array[where].getValue()) <0 ) {
 			moveItem(where, 2*where);
 			this.heapify(2*where);
+			ticker.tick(2);
 		}
 
-		//		//assuming there are 2 children
-		//		if ((array[where].getValue().compareTo(array[2*where].getValue()) > 0) || (array[where].getValue().compareTo(array[2*where + 1].getValue()) > 0)) { //this is saying that the parent cell is greater than either child
-		//			//now, need to swap loc of parent and child with smaller value
-		//			int temp = array[where].loc;
-		//			//array[where].loc = compareChildren(where).loc;
-		//			//compareChildren(where).loc = temp;
-		//			
-		//			//array[where] = compareChildren(where);
-		//			
+
 	}
 
 
-	//	/**
-	//	 * 
-	//	 * @param where: the location of the parent cell
-	//	 * @return the child with the greater value
-	//	 */
-	//	private Decreaser<T> compareChildren(int where){
-	//		//i think i need a while loop so that it will run until it meets the condition
-	//		if (array[2*where].getValue().compareTo(array[2*where + 1].getValue()) <0 ) {
-	//			return array[2*where];
-	//		}
-	//		else {
-	//			return array[2*where + 1];
-	//		}
-	//	}
-	//	
+
 	/**
 	 * Does the heap contain anything currently?
 	 * I implemented this for you.  Really, no need to thank me!

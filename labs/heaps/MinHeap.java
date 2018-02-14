@@ -160,7 +160,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	/**
 	 * As described in lecture, this method looks at a parent and its two 
 	 *   children, imposing the heap property on them by perhaps swapping
-	 *   the parent with the lesser of the two children.  The child thus
+	  *   the parent with the lesser of the two children.  The child thus
 	 *   affected must be heapified itself by a recursive call.
 	 * @param where the index into the array where the parent lives
 	 */

@@ -44,7 +44,7 @@ Recursion Tree Solutions
 3. T(n) = 7(logbase5(n) +1) + 21 
 	closed form solution = 7(logbase5(n) +1) 
 
-4.
+4. T(n) = (8n^3 -1)/7  + 131
 
 
 5. 

@@ -7,7 +7,7 @@ Your TA's name:
 Students in your studio group:
 
     Name        Student ID (begins with a 4)
-	
+	Gillian Laming 457507
 1.
 2.
 3.
@@ -19,22 +19,30 @@ Substitution
 
 
 Using substitution, prove that the solution to T(n)=T(n-1)+10 is T(n)=10n
-
+T(n) = T(n-1) + 10
+T(n) = 10(n-1) + 10
+T(1) = 10(0) + 10 = 10
 
 
 Using substitution, show that T(n)=T(n-1)+10 is O(n-squared)
-
+T(n) <= c(n-1)^2 + 10
+T(n) <= cn^2 - 2cn +c +10 <= cn^2
+T(n)<= cn^2
+10n <= cn^2
+c = 10
+T(n) = O(n^2)
 
 Recursion Tree Solutions
 
-1.
+1. closed form solution = n^2, T(n) = n^2 + 10
 
 
-2.
+2. reccurance equation: T(n) = T(n-1) + 4n -5, T(1) = 5
+	T(n) = 2n^2 - 3n + 6
+	closed form solution = 2n^2 - 3n + 1
 
-
-3.
-
+3. T(n) = 7(logbase5(n) +1) + 21 
+	closed form solution = 7(logbase5(n) +1) 
 
 4.
 

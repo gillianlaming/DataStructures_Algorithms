@@ -1,18 +1,18 @@
 -------------------
-CSE247 Robot tester starts testing heaps on 2018-02-19 22:24:42 -0600
+CSE247 Robot tester starts testing heaps on 2018-02-24 17:23:58 -0600
 
 ========
 Testing in ./GradingRepos/repos/cse247-s18-students-gdlaming: heaps as of 2018-02-15 00:05
 ========
 Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming
 Your branch is up-to-date with 'origin/master'.
-HEAD is now at 070e432 robograde
+HEAD is now at b9bd00f robograde
 No local changes to save
 
-Updating 070e432..b9bd00f
+Updating b9bd00f..d1c959d
 Fast-forward
- RoboGrade/heaps-test.TestMinHeap.txt | 58 ++++++++++++++++++------------------
- 1 file changed, 29 insertions(+), 29 deletions(-)
+ RoboGrade/heaps-test.TestMinHeap.txt | 63 ++++++++++++++++++------------------
+ 1 file changed, 31 insertions(+), 32 deletions(-)
 Going back in time to: 2018-02-15 00:05
 At hash 88b3af0c0d58a2869067603515cdc4fe613dcc08
 
@@ -90,13 +90,13 @@ test:
     [junit] done
     [junit] Displaying a correct heap of 50 unique integers:
     [junit]                                                                0                                                               
-    [junit]                                1                                                               8                               
-    [junit]                4                               2                               14                              10              
-    [junit]        9               5               13              3               23              21              19              27      
-    [junit]    30      16      15      11      22      17      7       6       34      31      35      25      43      29      37      33  
-    [junit]  48  41  46  44  49  24  28  18  36  40  39  26  32  12  42  20  45  38  47
+    [junit]                                1                                                               3                               
+    [junit]                5                               2                               17                              10              
+    [junit]        11              6               16              4               20              19              21              26      
+    [junit]    40      18      13      7       23      27      9       8       36      39      32      25      49      24      35      46  
+    [junit]  43  48  42  37  33  29  28  15  38  31  34  30  44  14  12  22  47  41  45
     [junit] 
-    [junit] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.538 sec
+    [junit] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.225 sec
     [junit] Output:
     [junit] Testing unique size 0
     [junit] done
@@ -140,14 +140,14 @@ test:
     [junit] done
     [junit] Displaying a correct heap of 50 unique integers:
     [junit]                                                                0                                                               
-    [junit]                                1                                                               8                               
-    [junit]                4                               2                               14                              10              
-    [junit]        9               5               13              3               23              21              19              27      
-    [junit]    30      16      15      11      22      17      7       6       34      31      35      25      43      29      37      33  
-    [junit]  48  41  46  44  49  24  28  18  36  40  39  26  32  12  42  20  45  38  47
+    [junit]                                1                                                               3                               
+    [junit]                5                               2                               17                              10              
+    [junit]        11              6               16              4               20              19              21              26      
+    [junit]    40      18      13      7       23      27      9       8       36      39      32      25      49      24      35      46  
+    [junit]  43  48  42  37  33  29  28  15  38  31  34  30  44  14  12  22  47  41  45
     [junit] 
     [junit] 
-    [junit] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.538 sec
+    [junit] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.225 sec
     [junit] ------------- Standard Output ---------------
     [junit] Testing unique size 0
     [junit] done
@@ -191,21 +191,21 @@ test:
     [junit] done
     [junit] Displaying a correct heap of 50 unique integers:
     [junit]                                                                0                                                               
-    [junit]                                1                                                               8                               
-    [junit]                4                               2                               14                              10              
-    [junit]        9               5               13              3               23              21              19              27      
-    [junit]    30      16      15      11      22      17      7       6       34      31      35      25      43      29      37      33  
-    [junit]  48  41  46  44  49  24  28  18  36  40  39  26  32  12  42  20  45  38  47
+    [junit]                                1                                                               3                               
+    [junit]                5                               2                               17                              10              
+    [junit]        11              6               16              4               20              19              21              26      
+    [junit]    40      18      13      7       23      27      9       8       36      39      32      25      49      24      35      46  
+    [junit]  43  48  42  37  33  29  28  15  38  31  34  30  44  14  12  22  47  41  45
     [junit] 
     [junit] ------------- ---------------- ---------------
     [junit] 
-    [junit] Testcase: testViaSorting took 0.165 sec
-    [junit] Testcase: testEmptyHeap took 0.041 sec
-    [junit] Testcase: testAndPrint took 0.048 sec
-    [junit] Testcase: testExtractMin took 0.029 sec
-    [junit] Testcase: testLocUpdatedHeapify took 0.011 sec
-    [junit] Testcase: testInsert took 0.007 sec
-    [junit] Testcase: testUsingHeapSort took 3.192 sec
+    [junit] Testcase: testViaSorting took 0.085 sec
+    [junit] Testcase: testEmptyHeap took 0.017 sec
+    [junit] Testcase: testAndPrint took 0.037 sec
+    [junit] Testcase: testExtractMin took 0.022 sec
+    [junit] Testcase: testLocUpdatedHeapify took 0.01 sec
+    [junit] Testcase: testInsert took 0 sec
+    [junit] Testcase: testUsingHeapSort took 3.022 sec
     [junit] Testcase: testLocUpdatedDecrease took 0 sec
 
 BUILD SUCCESSFUL
@@ -214,5 +214,5 @@ Total time: 4 seconds
 Lab is counted as working
 ================
 
-CSE247 Robot tester ends testing heaps on 2018-02-19 22:24:54 -0600
+CSE247 Robot tester ends testing heaps on 2018-02-24 17:24:09 -0600
 -------------------

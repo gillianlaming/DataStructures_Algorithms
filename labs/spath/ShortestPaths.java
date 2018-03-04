@@ -81,8 +81,6 @@ public class ShortestPaths {
 		// Extract nodes from the pq heap
 		//   and act upon them as instructed in class and the text.
 		//
-
-		
 		while (!pq.isEmpty()) {
 			VertexAndDist a = pq.extractMin();
 			Vertex v = a.getVertex();
@@ -96,52 +94,12 @@ public class ShortestPaths {
 					toEdge.put(newVertexDist.getValue().getVertex(), e);
 				}
 			}
-			
-		}
-		
-		
-		
-		
-		
-		//this is just for the start vertex
-//		pq.extractMin(); //extract the min
-//		Edge start = new Edge(startVertex, startVertex); //creating the edge
-//		toEdge.put(startVertex, start); //putting the edge on the map //but this isnt really an edge
-//		weights.put(start, pq.extractMin().getDistance()); //adding the weight
-//		//update the node???
-//
-//
-//		//relax edges
-//		for (Vertex v: g.vertices()) {
-//
-//			//see how many edges v has
-//			//find distance and insert that into the heap
-//
-//			for (Edge edge: v.edgesFrom()) {
-//				Decreaser<VertexAndDist> newVertexDist = map.get(v); 
-//				newVertexDist.decrease(newVertexDist.getValue()); //decreased
-//				map.put(v, newVertexDist); //idk if i need to do this...is the map already made??
-//				//weights.put(edge, newVertexDist.getValue().getDistance()); //is this step necessary? //do u only do this for the shortest path?
-//
-//			}
-//			//extract min and update node for all edges
-//			for (Edge edge: v.edgesFrom()) { 			//this loop will run the #of edges times
-//				Edge e = new Edge(v, pq.extractMin().getVertex());
-//				weights.put(e, pq.extractMin().getDistance());
-//			}
-//			
-//
-
-
-
-			//			pq.extractMin().getDistance();
-			//			Decreaser<VertexAndDist> newVertex = map.get(weights);
-			//			newVertex.decrease(newVertex.getValue());
-			//			pq.extractMin();
 
 		}
 
-	
+	}
+
+
 
 
 	/**
@@ -156,7 +114,7 @@ public class ShortestPaths {
 	 */
 	public LinkedList<Edge> returnPath(Vertex endVertex) {
 		LinkedList<Edge> path = new LinkedList<Edge>();
-		
+
 		path.addFirst(toEdge.get(endVertex));
 		Edge e = toEdge.get(endVertex);
 		Vertex v = e.from;
@@ -165,16 +123,6 @@ public class ShortestPaths {
 			v = e.from;
 			path.addFirst(e);
 		}
-			
-//		
-//		//endVertex.edgesTo()
-//		//figure out the quickest way from start vertex to end vertex
-//		for (Vertex v : endVertex) { //make endVertex iterable
-//			v.
-//		}
-
-		//path.add(e); //add shortest edge
-
 
 		return path;
 	}

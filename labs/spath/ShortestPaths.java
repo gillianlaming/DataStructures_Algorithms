@@ -99,9 +99,6 @@ public class ShortestPaths {
 
 	}
 
-
-
-
 	/**
 	 * Return a List of Edges forming a shortest path from the
 	 *    startVertex to the specified endVertex.  Do this by tracing

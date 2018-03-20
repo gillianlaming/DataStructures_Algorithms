@@ -26,9 +26,7 @@ public class KWayMergeSort {
 					smallerArray[j][i] = input[w++]; 
 				}
 			}
-			//row extractor method, double array, length and index number as params
-			//go thrua each row, sort it, put it back into the originial double array
-			
+		
 			for (int i = 0; i< K; ++i) {
 				Integer [] temp = new Integer[n/K];
 				temp = kwaymergesort(K, extractRow(i, n/K, smallerArray), ticker);
@@ -36,27 +34,31 @@ public class KWayMergeSort {
 					smallerArray[i][j] = temp[j];
 				}
 			}
-			
-			Integer [] one = extractRow(0, n/K, smallerArray);
-			Integer [] another = mergeTwo(one, extractRow(1, n/K, smallerArray));
-			for (int i = 2; i<K; ++i) {
-				another = mergeTwo(another, extractRow(i, n/K, smallerArray));
-			}
-			return another;
-			
-		
 
+			return recursiveMerge(smallerArray);
+
+			//			Integer [] one = extractRow(0, n/K, smallerArray);
+			//			Integer [] another = mergeTwo(one, extractRow(1, n/K, smallerArray));
+			//			for (int i = 2; i<K; ++i) {
+			//				another = mergeTwo(another, extractRow(i, n/K, smallerArray));
+			//			}
+			//			return another;
+			//			
 		}
-
-
 	}
 
 
-	//merging two arrays method
+	
+	/**
+	 * 
+	 * @param one, a 1d array
+	 * @param two, another 1d array
+	 * @return the sorted combination of both arrays
+	 */
 	public static Integer [] mergeTwo(Integer [] one, Integer [] two) {
-		int n = one.length; //this is the length of both of the arrays
+		int n = one.length; 
 		int m = two.length;
-		
+
 		Integer [] combined = new Integer[m+n];
 
 		int j = 0; //one
@@ -81,8 +83,14 @@ public class KWayMergeSort {
 		return combined;
 	}
 
-
-	//make sure this is working!!
+	//what is the runtime for this....is it really necessary 
+	/**
+	 * 
+	 * @param index, index of the desired row
+	 * @param length, length of the desired row (number of columns)
+	 * @param smallerArray, the double array that the row will be extracted from
+	 * @return
+	 */
 	public static Integer [] extractRow (int index, int length, Integer [][] smallerArray) {
 		Integer [] arr = new Integer[length];
 		for (int i = 0; i < length; ++i) {
@@ -90,26 +98,38 @@ public class KWayMergeSort {
 		}
 		return arr;
 	}
+
+	/**
+	 * 
+	 * @param arr, double array 
+	 * @return the sorted combination of all of the rows of that array
+	 */
+	public static Integer [] recursiveMerge (Integer [][] arr) {
+		
+		int n = arr.length;
+		int m = arr[0].length;
+		if (n == 1) {
+			return arr[0];
+		}
+
+		else {
+			Integer [][] arr1 = new Integer [n/2][m];
+			Integer [][] arr2 = new Integer [n/2][m];
+			for (int i = 0; i < n/2; ++i) {
+				for (int j = 0; j < m; ++j) {
+					arr1 [i][j] = arr[i][j];
+				}
+			}
+			for (int i = n/2; i < n; ++i) {
+				for (int j = 0; j<m; j++) {
+					arr2 [i-(n/2)][j] = arr[i][j];
+				}
+			}
+			return (mergeTwo(recursiveMerge(arr1), recursiveMerge(arr2)));
+		}
+		
+	}
 }
 
-// FIXME
-// Following just copies the input as the answer
-//
-// You must replace the loop below with code that performs
-// a K-way merge sort, placing the result in ans
-//
-// The web page for this assignment provides more detail.
-//
-// Use the ticker as you normally would, to account for
-// the operations taken to perform the K-way merge sort.
-//
-//	Integer[] ans = new Integer[n];
-//	for (int i=0; i < n; ++i) {
-//		ans[i] = input[i];
-//		ticker.tick();
-//	}
-//
-//	return ans;
-//}
 
 

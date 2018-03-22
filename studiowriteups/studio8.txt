@@ -7,7 +7,7 @@ Your TA's name:
 Students in your studio group:
 
     Name        Student ID (begins with a 4)
-	
+	Gillian Laming	457507
 1.
 2.
 3.
@@ -18,81 +18,96 @@ Students in your studio group:
 
 What distribution do you see plotted (in the histogram or an XY Scatter plot) for Color hashcodes?
 
-
+I see a pretty even (uniform) distribution for Color hashcodes. 
 
 If the distribution were not uniform, what would the plot look like?
 
+If it weren't uniform, the plot would show very different numbers for each value.
+
 How many Color objects are added to the set?
 
+Three color objects were added to the set.
+
 How many objects are contained in the set after all Color objects are added?
+Two
 
 Why are the above two numbers different?
 
-
+The numbers are different because sets cannot contain duplicate objects, so only black1 waas added, not black1 and black2.
 
 
 
 Are the Point objects' hash values distributed uniformly?
-
+Yes.
 
 How many Point objects are added to the set?
-
+Two
 
 How many Point objects are in the set after all Point objects are added?
-
+Two
 
 What is wrong with this result?
+Both the points contain the same x and y coordinate, which means they are the same point. This means that the hashCode/equality for the point
+object is ineffective.
 
 Based on the code you see in Point, how is equality determined between two Point objects?
-
+Equality is determined if this.x = x and if this.y = y, and if the objects are the same, if the objects aren't null, and if theyre of the 
+same class. 
 
 Looking at the output in the console window, how does the implementation of hashCode() for Point explain the bad behavior in the set of Points?
-
+The hashCode clearly does not work because the pointSet has two of the same points in it.
 
 How well does your hash function fare in terms of uniformly distributed hash values for the random point objects?
-
+It uniformly distributed.
 
 
 As a team, try out some ideas for Pancake's hashCode() implementation. Record your best idea in the studio8.txt file (here!):
 
-
+multiply pancake's hashCode by -1 if it is made with wheat flour
+	
 Based on the hashCode() implementation shown to you on the web page, answer the following questions:
 
 If two Pancake objects equal each other, will they get the same hashCode() results?
+Yes
 
 How good of a job does the implementation do of obtaining uniform distributions of hashCode() values for two Pancake objects that do not equal each other?
-
+A wheat pancake of radius 5 smaller than a white pancake will have the same hashCode().
 
 
 Just by inspection of the hashCode() method on the web page, state two Pancakes that are different yet have the same hashCode() value.
-
+a white pancake of radius 15 and a wheat pancake of radius 10 will have the same hashCode().
 
 Your best hashCode() for Pancake (paste the method here please):
 
-
-
-
+public int hashCode(){
+		int hash = radius;
+		if (wheat){
+			hash = hash * -1;
+		}
+		return hash;
+	}
 
 Do your hashCode() values for Pancake appear to be uniformly distributed?
 
-
+It does appear uniform
 
 
 Your implementation of Syrup's hashCode() -- paste here:
 
-
-
-
+public int hashCode(){
+		return (int)(brand.hashCode()*this.density);
+	}
 
 
 
 How uniformly distributed are your Syrup hashCode() values?
 
+very uniformly distributed.
 
 
 How uniformly distributed are your PancakeAndSyrup hashCode() values?
 
-
+uniformly distributed.
 
 
 

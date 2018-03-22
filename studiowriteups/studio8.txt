@@ -95,7 +95,7 @@ It does appear uniform
 Your implementation of Syrup's hashCode() -- paste here:
 
 public int hashCode(){
-		return (int)(brand.hashCode()*this.density);
+		return (int)(brand.hashCode() + 31*this.density);
 	}
 
 

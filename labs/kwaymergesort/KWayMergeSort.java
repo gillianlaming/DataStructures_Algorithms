@@ -20,7 +20,7 @@ public class KWayMergeSort {
 		
 		//the test is passing, but i'm not 100% sure why this is producing a sorted array
 		else {
-			//constant time, just initializing an array
+			//theta(kn)
 			Integer[][] smallerArray = new Integer [K][n/K];
 			int w = 0;
 			for(int j = 0; j<K; ++j) { //row
@@ -29,10 +29,9 @@ public class KWayMergeSort {
 					ticker.tick();
 				}
 			}
-			//
+			//theta(
 			for (int i = 0; i< K; ++i) {
 				Integer [] temp = new Integer[n/K];
-				//temp = kwaymergesort(K, extractRow(i, n/K, smallerArray), ticker);
 				temp = kwaymergesort(K, smallerArray[i], ticker);
 				ticker.tick();
 				for (int j = 0; j<n/K; j++) {
@@ -43,11 +42,12 @@ public class KWayMergeSort {
 
 			return recursiveMerge(smallerArray, ticker);
 			
+			
 
-			//			Integer [] one = extractRow(0, n/K, smallerArray);
-			//			Integer [] another = mergeTwo(one, extractRow(1, n/K, smallerArray));
+			//			Integer [] one = smallerArray[0];
+			//			Integer [] another = mergeTwo(one, smallerArray[1]);
 			//			for (int i = 2; i<K; ++i) {
-			//				another = mergeTwo(another, extractRow(i, n/K, smallerArray));
+			//				another = mergeTwo(another, smallerArray[i]);
 			//			}
 			//			return another;
 			//			

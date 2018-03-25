@@ -1,46 +1,37 @@
 -------------------
-CSE247 Robot tester starts testing spath on 2018-03-11 15:39:11 -0400
+CSE247 Robot tester starts testing spath on 2018-03-25 18:00:40 -0500
 
 ========
 Testing in ./GradingRepos/repos/cse247-s18-students-gdlaming: spath as of 2018-03-08 00:05
 ========
 Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming
 Your branch is up-to-date with 'origin/master'.
-HEAD is now at d1c959d robograde
+HEAD is now at dcd2125 Merge remote-tracking branch 'upstream/master'
 No local changes to save
 
-Updating d1c959d..dcd2125
+Updating dcd2125..ac1e9fc
 Fast-forward
- RoboGrade/heaps-test.TestMinHeap.txt           |  60 ++---
- labs/kwaymergesort/KWayMergeSort.java          |  38 ++++
- labs/kwaymergesort/MergeSort.java              |  52 +++++
- labs/kwaymergesort/test/MergeSortTimer.java    |  29 +++
- labs/kwaymergesort/test/TestMergeSort.java     |  59 +++++
- labs/spath/ShortestPaths.java                  | 143 ++++++++++++
- labs/spath/VertexAndDist.java                  |  60 +++++
- labs/spath/graphs/DirectedGraph.java           |  53 +++++
- labs/spath/graphs/Edge.java                    |  22 ++
- labs/spath/graphs/GraphTester.java             |  43 ++++
- labs/spath/graphs/Vertex.java                  |  55 +++++
- labs/spath/testing/GraphGenerator.java         | 290 +++++++++++++++++++++++++
- labs/spath/testing/GraphViz.java               | 279 ++++++++++++++++++++++++
- labs/spath/testing/TestShortestPath.java       |  76 +++++++
- labs/spath/testing/TestShortestPathSilent.java |  59 +++++
- 15 files changed, 1288 insertions(+), 30 deletions(-)
- create mode 100644 labs/kwaymergesort/KWayMergeSort.java
- create mode 100644 labs/kwaymergesort/MergeSort.java
- create mode 100644 labs/kwaymergesort/test/MergeSortTimer.java
- create mode 100644 labs/kwaymergesort/test/TestMergeSort.java
- create mode 100644 labs/spath/ShortestPaths.java
- create mode 100644 labs/spath/VertexAndDist.java
- create mode 100644 labs/spath/graphs/DirectedGraph.java
- create mode 100644 labs/spath/graphs/Edge.java
- create mode 100644 labs/spath/graphs/GraphTester.java
- create mode 100644 labs/spath/graphs/Vertex.java
- create mode 100644 labs/spath/testing/GraphGenerator.java
- create mode 100644 labs/spath/testing/GraphViz.java
- create mode 100644 labs/spath/testing/TestShortestPath.java
- create mode 100644 labs/spath/testing/TestShortestPathSilent.java
+ RoboGrade/spath-testing.TestShortestPathSilent.txt |  91 +++++++++++++++
+ labs/kwaymergesort/KWayMergeSort.java              | 128 ++++++++++++++++++---
+ lecture/lecture8/SetExamples2.java                 |  45 ++++++++
+ lecture/lecture8/SetExamples3.java                 |  34 ++++++
+ studios/studio8/ColorAndPoint.java                 |  90 +++++++++++++++
+ studios/studio8/HashCodeRunner.java                |  62 ++++++++++
+ studios/studio8/Pancake.java                       |  41 +++++++
+ studios/studio8/PancakeAndSyrup.java               |  44 +++++++
+ studios/studio8/Point.java                         |  44 +++++++
+ studios/studio8/Syrup.java                         |  44 +++++++
+ studiowriteups/studio8.txt                         |  55 +++++----
+ 11 files changed, 639 insertions(+), 39 deletions(-)
+ create mode 100644 RoboGrade/spath-testing.TestShortestPathSilent.txt
+ create mode 100644 lecture/lecture8/SetExamples2.java
+ create mode 100644 lecture/lecture8/SetExamples3.java
+ create mode 100644 studios/studio8/ColorAndPoint.java
+ create mode 100644 studios/studio8/HashCodeRunner.java
+ create mode 100644 studios/studio8/Pancake.java
+ create mode 100644 studios/studio8/PancakeAndSyrup.java
+ create mode 100644 studios/studio8/Point.java
+ create mode 100644 studios/studio8/Syrup.java
 Going back in time to: 2018-03-08 00:05
 At hash dcd212527b92b55ef08b633c9bd9b36e9097228e
 
@@ -69,23 +60,23 @@ compile:
     [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming/bin
 
 BUILD SUCCESSFUL
-Total time: 0 seconds
+Total time: 1 second
 Running test testing.TestShortestPathSilent
 Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
 
 test:
     [junit] Running spath.testing.TestShortestPathSilent
     [junit] Testsuite: spath.testing.TestShortestPathSilent
-    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.144 sec
-    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.144 sec
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.561 sec
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.561 sec
     [junit] 
-    [junit] Testcase: test took 3.125 sec
+    [junit] Testcase: test took 3.54 sec
 
 BUILD SUCCESSFUL
-Total time: 3 seconds
+Total time: 4 seconds
 ================
 Lab is counted as working
 ================
 
-CSE247 Robot tester ends testing spath on 2018-03-11 15:39:21 -0400
+CSE247 Robot tester ends testing spath on 2018-03-25 18:00:50 -0500
 -------------------

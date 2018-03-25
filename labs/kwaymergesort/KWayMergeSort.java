@@ -18,9 +18,8 @@ public class KWayMergeSort {
 			return input;
 		}
 		
-		//the test is passing, but i'm not 100% sure why this is producing a sorted array
 		else {
-			//theta(kn)
+		
 			Integer[][] smallerArray = new Integer [K][n/K];
 			int w = 0;
 			for(int j = 0; j<K; ++j) { //row
@@ -29,7 +28,7 @@ public class KWayMergeSort {
 					ticker.tick();
 				}
 			}
-			//theta(
+		
 			for (int i = 0; i< K; ++i) {
 				Integer [] temp = new Integer[n/K];
 				temp = kwaymergesort(K, smallerArray[i], ticker);
@@ -89,22 +88,6 @@ public class KWayMergeSort {
 
 		return combined;
 	}
-
-	//what is the runtime for this....is it really necessary 
-	/**
-	 * 
-	 * @param index, index of the desired row
-	 * @param length, length of the desired row (number of columns)
-	 * @param smallerArray, the double array that the row will be extracted from
-	 * @return
-	 */
-//	public static Integer [] extractRow (int index, int length, Integer [][] smallerArray) {
-//		Integer [] arr = new Integer[length];
-//		for (int i = 0; i < length; ++i) {
-//			arr[i] = smallerArray[index][i];
-//		}
-//		return arr;
-//	}
 
 	/**
 	 * 

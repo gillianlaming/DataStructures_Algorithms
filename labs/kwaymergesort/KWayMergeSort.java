@@ -40,16 +40,7 @@ public class KWayMergeSort {
 			}
 
 			return recursiveMerge(smallerArray, ticker);
-			
-			
-
-			//			Integer [] one = smallerArray[0];
-			//			Integer [] another = mergeTwo(one, smallerArray[1]);
-			//			for (int i = 2; i<K; ++i) {
-			//				another = mergeTwo(another, smallerArray[i]);
-			//			}
-			//			return another;
-			//			
+				
 		}
 	}
 
@@ -61,7 +52,7 @@ public class KWayMergeSort {
 	 * @param two, another 1d array
 	 * @return the sorted combination of both arrays
 	 */
-	public static Integer [] mergeTwo(Integer [] one, Integer [] two) { //what is the runtime on this
+	public static Integer [] mergeTwo(Integer [] one, Integer [] two) { 
 		int n = one.length; 
 		int m = two.length;
 

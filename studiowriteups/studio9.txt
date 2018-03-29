@@ -7,7 +7,7 @@ Your TA's name:
 Students in your studio group:
 
     Name        Student ID (begins with a 4)
-	
+	Gillian Laming	457507
 1.
 2.
 3.
@@ -19,16 +19,22 @@ Review from Studio 8
 
 Based on your knowledge of hash tables now, what do you expect to happen when you run PointSet.java? Why? 
 
+We would expect the second point not to be added because they are the same points and duplicate points are not allowed in a set.
+
 Division Method 
 
 Try running the DivisionHash.java file several times, varying the number of buckets used by changing the argument to the DivisionHash constructor in the main method. Try at least one even number, odd number, and prime number less than 20, then try at least one even, odd, and prime near 100. What behavior do you observe? What explains this behavior?
 Based on your observations, what types of values are good for the number of buckets?
 
-
+Low even numbers resulted in poor distribution of the objects. For example, when there were 8 buckets, all of the objects were in the ssame bucket. A low odd number
+worked better in terms of distribution, but low prime numbers (eg 13) created a nearly even distribution. The higher numbers, both odd and even,
+resulted in pretty uneven distribution. Many of the buckets were empty while some of them had a few elements in them. A prime number near 100
+also resulted in fairly uneven distribution. Based on these observations, we can conclude that lower prime numbers work best for even distribution.
 
 
 Identify what this statement is doing and confirm your answer with your group. Then, modify this statement so that it generates a different set of numbers. What do you observe now when you run the code? Repeat this experiment with different values added to the hash set and different numbers of buckets in the set.
-
+This statement is assigning each element's hashCode() to a value which is a multiple of 16. Because the divisionHash is diving each number by 8, all of the values will be divisible and therefore
+will end up in the same bucket. If you change the value from 16 to a prime number like 13, you will get a much more even distribution. 
 
 
 
@@ -36,6 +42,13 @@ Multiplication Method
 
 Modify this loop so that it generates different sets of values, and run the code with each set (including the original). What do you observe? What does this tell you about the multiplication method?
 
-
+For every number I plugged in including the original number (32), I got out a fairly even distribution. This indicates that the hashCode() for the multiply
+method works a lot more effectively than the hashCode() for the division method. 
 
 Use the multiplication method to figure out which bucket each object gets placed in, assuming the hash set has 10 buckets. A calculator will be helpful for this section.
+
+a = 15 bucket 2
+b = 25 bucket 4
+c = 124 bucket 6
+d = 725 bucket 0
+e = 56 bucket 6

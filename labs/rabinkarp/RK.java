@@ -2,12 +2,6 @@ package rabinkarp;
 
 public class RK {
 
-	//
-	// Be sure to look at the write up for this assignment
-	//  so that you get full credit by satisfying all
-	//  of its requirements
-	//
-
 	private int m; 
 	private String query;
 	private String target;

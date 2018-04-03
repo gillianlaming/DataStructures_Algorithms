@@ -8,7 +8,6 @@ public class RK {
 	//  of its requirements
 	//
 
-	//do i need these instance variables?
 	private int m; 
 	private String query;
 	private String target;
@@ -25,8 +24,6 @@ public class RK {
 		h = 0;
 		circBuffer = new char [m];
 		counter = 0;
-
-
 	}
 
 
@@ -35,8 +32,6 @@ public class RK {
 	 * @param d the next character in the target string
 	 * @return
 	 */
-	//must take theta(1) time
-	//incremental approach
 	public int nextCh(char d) {
 		
 		int a = circBuffer[counter];
@@ -60,7 +55,5 @@ public class RK {
 		}
 		return sum;
 	}
-
-
 
 }

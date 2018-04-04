@@ -47,7 +47,7 @@ method works a lot more effectively than the hashCode() for the division method.
 
 Use the multiplication method to figure out which bucket each object gets placed in, assuming the hash set has 10 buckets. A calculator will be helpful for this section.
 
-a = 15 bucket 2
+a = 15 bucket 3
 b = 25 bucket 4
 c = 124 bucket 6
 d = 725 bucket 0

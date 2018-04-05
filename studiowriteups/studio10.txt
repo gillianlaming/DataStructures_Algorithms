@@ -7,7 +7,7 @@ Your TA's name:
 Students in your studio group:
 
     Name        Student ID (begins with a 4)
-	
+	gillian laming 457507
 1.
 2.
 3.
@@ -21,26 +21,43 @@ Part A
 
 A1. Why do sad and happy appear as they do? Why is happy indented? What are the parent, left-child, and right-child relationships between happy and sad?
 
+sad is the parent of happy and sad. happy is below sad, which indicates that it is of lesser value than sad. 
+
 Modify the code in the main method so that some string appears above sad, indented as much as happy.
 
 A2. What string did you use?
+
+tired
 
 In the numbers that follow, find the first and last entries in the tree that is shown (on its side, as discussed in lecture).
 
 A3. Is the first number always the first line to be shown in such a display?
 
+no, because the first number is going to be the smallest number which means it will be the leftmost node.
+
 A4. Is the last number always the last line to be shown?
+
+no, because the last number is the largest which means it will be the right most node.
 
 A5. Why do we need addHelper?
 
+you need addhelper because when you want to add an element you only want to pass that element through to the method.
+in practice though, you need more information than just that one element before you add it to the BST.
+
 A6. Why is it private instead of public?
+
+it is private because whoever write this code only wants it to be accessed from within this class. 
 
 A7. Does the code actually remove the node containing the value to be removed? If not, what is actually happening?
 
+it doesn't actually remove the node, instead it replaces it with a node that will still satisfy the BST conditions. 
+
 A8. Why does the code fail to execute properly?
+it fails because it cannot be cast to comparable. essentially, you cannot quantitatively compare two colors.
 
 A9. Why does eclipse not report a problem when you try to create a BST of type Color?
-
+when you are actually coding, eclipse will not report a problem because you can insert colors into the BST.
+Once you get to runtime though, you encounter a problem because two colors cannot be compared. 
 
 Part B
 
@@ -48,24 +65,68 @@ Part B
 SortedSetUsingBST (random input)
 
 B1. What behavior do you see in the output? You will likely have to rely on ticks rather than time, because the times are so fast.
+i observed an exponential function.
 
 B2. What behavior did you expect to see, and why?
-
+i expected to see a graph of nlogn, because for each element n, it takes O(logn) time, resulting in a graph of nlogn.
 
 SortedSetUsingBST (sorted input)
 
 B3. What behavior do you see in the output given the sorted input?
+the graph was quadratic.
 
 B4. What behavior did you expect to see, and why?
+we expected to see quadratic time, because adding each element takes linear time,
+because essentially the BST becomes a linked list without a tail reference. when you add n elements,
+it operates in n^2 time.
 
 SortedSetUsingUnorderedList
 
 B5. What behavior do you see in the output when a sorted set is implemented by an unordered list? Adding to the list should be quick, so why are we seeing these times?
+my graph looked quadratic. it takes n time to add an element and there are n elements to add.
 
 B6. What behavior did you expect to see, and why?
 
+i expected this result based on the run times for insert in a list (n time, n times). 
 
 
+red black tree:
+
+50, 25, 75, 10, 90, 30, 60, 5, 95, 26, 55, 31, 61, 76, 11
+if you input the sequence above, the tree will not need to rotate.
+
+after insertion 1:
+black height = 1
+after insertion 2:
+black height = 1
+after insertion 3:
+black height = 1
+after insertion 4:
+black height = 2
+after insertion 5:
+black height = 2
+after insertion 6:
+black height = 3
+after insertion 7:
+black height = 3
+after insertion 8:
+black height = 2
+after insertion 9:
+black height = 2
+after insertion 10:
+black height = 5
+after insertion 11:
+black height = 5
+after insertion 12:
+black height = 4
+after insertion 13:
+black height = 4
+after insertion 14:
+black height = 5
+after insertion 15:
+black height = 5
+
+*if there is a red node pointing to another red node, a rotation is triggered.
 
 
 

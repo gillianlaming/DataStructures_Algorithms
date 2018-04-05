@@ -26,12 +26,14 @@ public class BST<E> implements SortedSet<E> {
 		BST<String> lonely = new BST<String>(new Ticker());
 		lonely.add("sad");
 		lonely.add("happy");
+		lonely.add("tired");
 		System.out.println("lonely tree \n" + lonely.dumpTree());
 		BST<Integer> t = new BST<Integer>(new Ticker()); // here, E is Integer
 		Random r = new Random();
 //		for (int i=0; i < 5; ++i) {
 //			t.add(r.nextInt(100));
 //		}
+		
 		t.add(50);
 		t.add(30);
 		t.add(70);

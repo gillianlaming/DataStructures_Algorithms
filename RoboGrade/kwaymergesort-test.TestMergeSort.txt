@@ -1,21 +1,20 @@
 -------------------
-CSE247 Robot tester starts testing kwaymergesort on 2018-04-02 21:57:52 -0500
+CSE247 Robot tester starts testing kwaymergesort on 2018-04-07 13:41:25 -0500
 
 ========
-Testing in ./GradingRepos/repos/cse247-s18-students-gdlaming: kwaymergesort as of 2018-03-29 01:00 2018-04-05 00:05
+Testing in ./GradingRepos/repos/cse247-s18-students-gdlaming: kwaymergesort as of 2018-03-29 01:00 2018-04-05 01:00
 ========
 Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming
 Your branch is up-to-date with 'origin/master'.
-HEAD is now at cd6fd7a studio 9
+HEAD is now at 72c2dee studio 10
 No local changes to save
 
-Updating cd6fd7a..3788db3
+Updating 72c2dee..c7b08fe
 Fast-forward
- RoboGrade/kwaymergesort-test.TestMergeSort.txt | 148 +++++++++++++++++++++++++
- 1 file changed, 148 insertions(+)
- create mode 100644 RoboGrade/kwaymergesort-test.TestMergeSort.txt
-Going back in time to: 2018-03-29 01:00 2018-04-05 00:05
-At hash 3788db38b58f1cadad228ec8713c492fd57eec1e
+ RoboGrade/spath-testing.TestShortestPathSilent.txt | 56 ++++++++++------------
+ 1 file changed, 26 insertions(+), 30 deletions(-)
+Going back in time to: 2018-03-29 01:00 2018-04-05 01:00
+At hash dac2bca85c7e8a8bb0b79d3b557b349079accb20
 
 Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
 
@@ -49,74 +48,74 @@ Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
 test:
     [junit] Running kwaymergesort.test.TestMergeSort
     [junit] Testsuite: kwaymergesort.test.TestMergeSort
+    [junit] 4-way merge sort of 4 integers
     [junit] 16-way merge sort of 16 integers
-    [junit] 4-way merge sort of 64 integers
-    [junit] 4-way merge sort of 16 integers
+    [junit] 4-way merge sort of 4 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 16-way merge sort of 16 integers
     [junit] 32-way merge sort of 32768 integers
-    [junit] 32-way merge sort of 1024 integers
-    [junit] 8-way merge sort of 512 integers
-    [junit] 4-way merge sort of 64 integers
-    [junit] 16-way merge sort of 256 integers
-    [junit] 8-way merge sort of 512 integers
-    [junit] 8-way merge sort of 8 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 32-way merge sort of 32 integers
+    [junit] 4-way merge sort of 16 integers
     [junit] 8-way merge sort of 64 integers
-    [junit] 4-way merge sort of 16 integers
-    [junit] 16-way merge sort of 16 integers
-    [junit] 8-way merge sort of 512 integers
-    [junit] 32-way merge sort of 32768 integers
-    [junit] 4-way merge sort of 16 integers
-    [junit] 4-way merge sort of 16 integers
+    [junit] 32-way merge sort of 1024 integers
+    [junit] 32-way merge sort of 32 integers
+    [junit] 4-way merge sort of 64 integers
+    [junit] 32-way merge sort of 1024 integers
     [junit] 16-way merge sort of 4096 integers
     [junit] 4-way merge sort of 16 integers
-    [junit] 32-way merge sort of 1024 integers
-    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.213 sec
+    [junit] 8-way merge sort of 512 integers
+    [junit] 4-way merge sort of 64 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.178 sec
     [junit] Output:
+    [junit] 4-way merge sort of 4 integers
     [junit] 16-way merge sort of 16 integers
-    [junit] 4-way merge sort of 64 integers
-    [junit] 4-way merge sort of 16 integers
+    [junit] 4-way merge sort of 4 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 16-way merge sort of 16 integers
     [junit] 32-way merge sort of 32768 integers
-    [junit] 32-way merge sort of 1024 integers
-    [junit] 8-way merge sort of 512 integers
-    [junit] 4-way merge sort of 64 integers
-    [junit] 16-way merge sort of 256 integers
-    [junit] 8-way merge sort of 512 integers
-    [junit] 8-way merge sort of 8 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 32-way merge sort of 32 integers
+    [junit] 4-way merge sort of 16 integers
     [junit] 8-way merge sort of 64 integers
-    [junit] 4-way merge sort of 16 integers
-    [junit] 16-way merge sort of 16 integers
-    [junit] 8-way merge sort of 512 integers
-    [junit] 32-way merge sort of 32768 integers
-    [junit] 4-way merge sort of 16 integers
-    [junit] 4-way merge sort of 16 integers
+    [junit] 32-way merge sort of 1024 integers
+    [junit] 32-way merge sort of 32 integers
+    [junit] 4-way merge sort of 64 integers
+    [junit] 32-way merge sort of 1024 integers
     [junit] 16-way merge sort of 4096 integers
     [junit] 4-way merge sort of 16 integers
-    [junit] 32-way merge sort of 1024 integers
+    [junit] 8-way merge sort of 512 integers
+    [junit] 4-way merge sort of 64 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 16-way merge sort of 4096 integers
     [junit] 
-    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.213 sec
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.178 sec
     [junit] ------------- Standard Output ---------------
+    [junit] 4-way merge sort of 4 integers
     [junit] 16-way merge sort of 16 integers
-    [junit] 4-way merge sort of 64 integers
-    [junit] 4-way merge sort of 16 integers
+    [junit] 4-way merge sort of 4 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 16-way merge sort of 16 integers
     [junit] 32-way merge sort of 32768 integers
-    [junit] 32-way merge sort of 1024 integers
-    [junit] 8-way merge sort of 512 integers
-    [junit] 4-way merge sort of 64 integers
-    [junit] 16-way merge sort of 256 integers
-    [junit] 8-way merge sort of 512 integers
-    [junit] 8-way merge sort of 8 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 32-way merge sort of 32 integers
+    [junit] 4-way merge sort of 16 integers
     [junit] 8-way merge sort of 64 integers
-    [junit] 4-way merge sort of 16 integers
-    [junit] 16-way merge sort of 16 integers
-    [junit] 8-way merge sort of 512 integers
-    [junit] 32-way merge sort of 32768 integers
-    [junit] 4-way merge sort of 16 integers
-    [junit] 4-way merge sort of 16 integers
+    [junit] 32-way merge sort of 1024 integers
+    [junit] 32-way merge sort of 32 integers
+    [junit] 4-way merge sort of 64 integers
+    [junit] 32-way merge sort of 1024 integers
     [junit] 16-way merge sort of 4096 integers
     [junit] 4-way merge sort of 16 integers
-    [junit] 32-way merge sort of 1024 integers
+    [junit] 8-way merge sort of 512 integers
+    [junit] 4-way merge sort of 64 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 16-way merge sort of 4096 integers
     [junit] ------------- ---------------- ---------------
     [junit] 
-    [junit] Testcase: sortTest took 0.191 sec
+    [junit] Testcase: sortTest took 0.151 sec
 
 BUILD SUCCESSFUL
 Total time: 1 second
@@ -124,5 +123,5 @@ Total time: 1 second
 Lab is counted as working
 ================
 
-CSE247 Robot tester ends testing kwaymergesort on 2018-04-02 21:57:58 -0500
+CSE247 Robot tester ends testing kwaymergesort on 2018-04-07 13:41:31 -0500
 -------------------

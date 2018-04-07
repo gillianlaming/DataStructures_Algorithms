@@ -1,37 +1,33 @@
 -------------------
-CSE247 Robot tester starts testing spath on 2018-03-25 18:00:40 -0500
+CSE247 Robot tester starts testing spath on 2018-04-07 12:00:33 -0500
 
 ========
 Testing in ./GradingRepos/repos/cse247-s18-students-gdlaming: spath as of 2018-03-08 00:05
 ========
 Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming
 Your branch is up-to-date with 'origin/master'.
-HEAD is now at dcd2125 Merge remote-tracking branch 'upstream/master'
+HEAD is now at 3788db3 robograde
 No local changes to save
 
-Updating dcd2125..ac1e9fc
+Updating 3788db3..72c2dee
 Fast-forward
- RoboGrade/spath-testing.TestShortestPathSilent.txt |  91 +++++++++++++++
- labs/kwaymergesort/KWayMergeSort.java              | 128 ++++++++++++++++++---
- lecture/lecture8/SetExamples2.java                 |  45 ++++++++
- lecture/lecture8/SetExamples3.java                 |  34 ++++++
- studios/studio8/ColorAndPoint.java                 |  90 +++++++++++++++
- studios/studio8/HashCodeRunner.java                |  62 ++++++++++
- studios/studio8/Pancake.java                       |  41 +++++++
- studios/studio8/PancakeAndSyrup.java               |  44 +++++++
- studios/studio8/Point.java                         |  44 +++++++
- studios/studio8/Syrup.java                         |  44 +++++++
- studiowriteups/studio8.txt                         |  55 +++++----
- 11 files changed, 639 insertions(+), 39 deletions(-)
- create mode 100644 RoboGrade/spath-testing.TestShortestPathSilent.txt
- create mode 100644 lecture/lecture8/SetExamples2.java
- create mode 100644 lecture/lecture8/SetExamples3.java
- create mode 100644 studios/studio8/ColorAndPoint.java
- create mode 100644 studios/studio8/HashCodeRunner.java
- create mode 100644 studios/studio8/Pancake.java
- create mode 100644 studios/studio8/PancakeAndSyrup.java
- create mode 100644 studios/studio8/Point.java
- create mode 100644 studios/studio8/Syrup.java
+ RoboGrade/kwaymergesort-test.TestMergeSort.txt    | 128 ++++----
+ labs/rabinkarp/RK.java                            |  43 ++-
+ lecture/lecture10/simons18/OrderSet247.java       | 137 ++++++++
+ lecture/lecture10/simons18/TreeNode.java          |  21 ++
+ studios/studio10/BST.java                         | 364 ++++++++++++++++++++++
+ studios/studio10/SortedSetUsingBST.java           |  67 ++++
+ studios/studio10/SortedSetUsingUnorderedList.java |  67 ++++
+ studios/studio10/TreeNode.java                    |  27 ++
+ studiowriteups/studio10.txt                       |  71 ++++-
+ studiowriteups/studio9.txt                        |   2 +-
+ 10 files changed, 837 insertions(+), 90 deletions(-)
+ create mode 100644 lecture/lecture10/simons18/OrderSet247.java
+ create mode 100644 lecture/lecture10/simons18/TreeNode.java
+ create mode 100644 studios/studio10/BST.java
+ create mode 100644 studios/studio10/SortedSetUsingBST.java
+ create mode 100644 studios/studio10/SortedSetUsingUnorderedList.java
+ create mode 100644 studios/studio10/TreeNode.java
 Going back in time to: 2018-03-08 00:05
 At hash dcd212527b92b55ef08b633c9bd9b36e9097228e
 
@@ -60,23 +56,23 @@ compile:
     [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming/bin
 
 BUILD SUCCESSFUL
-Total time: 1 second
+Total time: 0 seconds
 Running test testing.TestShortestPathSilent
 Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
 
 test:
     [junit] Running spath.testing.TestShortestPathSilent
     [junit] Testsuite: spath.testing.TestShortestPathSilent
-    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.561 sec
-    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.561 sec
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.288 sec
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.288 sec
     [junit] 
-    [junit] Testcase: test took 3.54 sec
+    [junit] Testcase: test took 3.268 sec
 
 BUILD SUCCESSFUL
-Total time: 4 seconds
+Total time: 3 seconds
 ================
 Lab is counted as working
 ================
 
-CSE247 Robot tester ends testing spath on 2018-03-25 18:00:50 -0500
+CSE247 Robot tester ends testing spath on 2018-04-07 12:00:44 -0500
 -------------------

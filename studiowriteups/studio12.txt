@@ -7,7 +7,7 @@ Your TA's name:
 Students in your studio group:
 
     Name        Student ID (begins with a 4)
-	
+	Gillian Laming	457507
 1.
 2.
 3.
@@ -21,23 +21,43 @@ Mark the nodes with their discover time and finish time.
 Explore neighbors alphabetically when given a choice. Refer to the Lecture 11 slides if you need to see what a DFS numbering looks like.
 
 	Discovered		Finished 
-A
-B
-C
-D
-E
-F
-G
+A  5					6
+B  3					10	
+C  4					7
+D  8					9
+E  1					14
+F  2 				11
+G  12				13
 
 Based on your numbering, generate a valid topological order for the nodes in the graph.
+you cannot have a valid topological ordering because you have a cycle 
 
 Perform a breadth-first search (BFS) on the same graph, starting at node E, and give the breadth-first numbering of each node. 
 Explore neighbors alphabetically when given a choice.
 
+E = 0
+F = 1
+G = 1
+B = 2
+D = 2
+C = 3
+A = 3
+
+
 List the preorder traversal of the nodes in the tree.
+20, 10, 5, 2, 8, 15, 30, 25, 23, 27, 40, 45
 
 List the postorder traversal of the nodes in the tree.
+2, 8, 5, 15, 10, 23, 27, 25, 45, 40, 30, 20 
 
 List the inorder traversal of the nodes in the tree.
+2, 5, 8, 10, 15, 20, 23, 25, 27, 30, 40, 45
 
 Prove that the reverse of a postorder listing of a tree is the same as the right-to-left preorder listing of a tree.
+
+base case = tree of height n = 1 (or the root)
+
+n = 2 case, you know they traverse the same way, so when you add other subtrees of size n = 2, 
+you know they continue to traverse the same way
+
+

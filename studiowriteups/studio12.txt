@@ -58,6 +58,6 @@ Prove that the reverse of a postorder listing of a tree is the same as the right
 base case = tree of height n = 1 (or the root)
 
 n = 2 case, you know they traverse the same way, so when you add other subtrees of size n = 2, 
-you know they continue to traverse the same way
+they continue to traverse the same way
 
 

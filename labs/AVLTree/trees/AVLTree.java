@@ -8,11 +8,14 @@ import java.util.LinkedList;
 public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	private AVLTreeNode<T> root;
 	public Ticker ticker;
+	public int balanceFactor; //i added
+	public int height; //i added
 
 	public AVLTree(Ticker t) {
 		super();
 		this.root = null;
 		this.ticker = t;
+		this.balanceFactor = 0;
 
 	}
 
@@ -28,14 +31,38 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	 * @param value the value to be found
 	 * @return the node element if it exists/otherwise null
 	 */
+	//not inserting the third element
+	//i wrote everything in this method
 	public AVLTreeNode<T> Find(T value) {
 		return findHelper(value, this.root);
 	}
 
 	// helper function for find, see above for description.
 	private AVLTreeNode<T> findHelper(T value, AVLTreeNode<T> curr) {
-        //FIXME: Find the node that has the value 'value'.
-        return null;
+		System.out.println("I am looking");
+		
+		if (curr == null) {
+			System.out.println("uh oh");
+		//	AVLTreeNode<T> wrong = new AVLTreeNode<T>(value);
+			return curr;
+		}
+
+		T rootVal = curr.getValue();
+		if (rootVal.compareTo(value) == 0) { //equal
+			System.out.println("I have found 1");
+
+			return curr;
+		}
+
+		if (rootVal.compareTo(value) == 1) { //greater than
+			System.out.println("I have found 2");
+			return findHelper(value, curr.Right());
+		}
+
+		else { 	//less than
+			System.out.println("I have found 3");
+			return findHelper(value, curr.Left());
+		}
 	}
 
 	/**
@@ -44,87 +71,196 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	 *
 	 * @param value the value to be inserted
 	 * @return the node element that was inserted
-     */
-	public AVLTreeNode<T> Insert(T value) {
+	 */
+	//i wrote everything in this method
+	public AVLTreeNode<T> Insert(T value) { 
+		
 		AVLTreeNode<T> toInsert = new AVLTreeNode<T>(value);
-        //FIXME: Insert toInsert into the tree and update any instance variables.
+		this.root = insertHelper(this.root, toInsert);
+		size++;
 		return toInsert;
-	}
+//		AVLTreeNode<T> current = this.root;
+//
+//		if (this.isEmpty()) {
+//			this.root= toInsert;
+//			this.balanceFactor = root.getBalance();
+//			size++;
+//			//return toInsert;
+//		}
+//		
+//		while (current != null) { //this will find the parent node of the item to be inserted
+//			int theVal = value.compareTo(current.getValue());
+//			if (theVal < 0) { //goes left
+//				if(current.Left() == null) {
+//					current.setLeft(toInsert);
+//					toInsert.setParent(current);
+//					current.height++;
+//					size++;
+//					//current.getBalance();
+//					//return toInsert;
+//				}
+//				else {
+//					current = current.Left();
+//				}
+//			}
+//			else { //goes right
+//				if (current.Right() == null) {
+//					current.setRight(toInsert);
+//					toInsert.setParent(current);
+//					//current.getBalance();
+//					current.height++;
+//					size++;
+//					//return toInsert;
+//				}
+//				else {
+//					current = current.Right();
+//				}
+//			}
+//			
+//		}
 
+
+		//AVLTreeNode<T> newRoot = insertHelper(current, toInsert);
+
+
+
+
+		//		if (value.compareTo(newRoot.getValue()) >= 0) {
+		//			newRoot.setRight(toInsert);
+		//		}
+		//		if (value.compareTo(newRoot.getValue()) < 0) {
+		//			newRoot.setLeft(toInsert);
+		//		}
+
+		//		balanceFactor = root.getBalance();
+		//		root.height = Math.max(root.getLeftHeight(), root.getRightHeight());
+		//return toInsert;
+		//return toInsert;
+
+
+
+	}
+	//do i call rebalanced from this?
 	/**
 	 * helper method for insertion into the AVL Binary Search Tree.
 	 * Returns the (possibly different) root of the rebalanced
 	 *   subtree.
 	 *
 	 * @param toInsert the value being inserted
-     * @param node the root of the subtree to insert into.
+	 * @param node the root of the subtree to insert into.
 	 * @return the node element that was inserted
 	 */
 	private AVLTreeNode<T> insertHelper(AVLTreeNode<T> node, AVLTreeNode<T> toInsert){
-        //FIXME: insert toInsert into the tree starting at 'curr'
-        return null;
+		if (node == null) {
+			toInsert.height = 1;
+			return toInsert;
+		}
+		else {
+			if (toInsert.getValue().compareTo(node.getValue())<0) {
+				node.setLeft(insertHelper(node.Left(), toInsert));
+				node.Left().setParent(node);
+			}
+			else {
+				node.setRight(insertHelper(node.Right(), toInsert));
+				node.Right().setParent(node);
+			}
+		}
+		fixHeight(node);
+		return rebalance(node);
+		
 	}
 
-	/**
+
+	/** 
 	 * Rebalances the subtree rooted at the input node (if necessary).
 	 * Returns the (possibly different) root of the rebalanced
-     *   subtree.
+	 *   subtree.
 	 *
 	 * @param node the root of the subtree to rebalance
 	 * @return the node at the root of the rebalanced subtree
-     */
-    private AVLTreeNode<T> rebalance(AVLTreeNode<T> node) {
-	    //FIXME: rebalance the tree starting at 'node' as needed
-        return null;
+	 */
+	private AVLTreeNode<T> rebalance(AVLTreeNode<T> node) {
+		//FIXME: rebalance the tree starting at 'node' as needed
+		//		if (Math.abs(node.getBalance()) >= 1) { 
+		//			return node;
+		//		}
+		//		//else need to determine which case it is
+		//		if (node.getBalance() < 0) { //left heavy
+		//
+		//		}
+		//		if (node.getBalance() > 0) { //right heavy
+		//
+		//		}
+		return null;
 	}
 
 	/**
 	 * Performs a standard right-rotation on a subtree rooted
-     *   at the input node.
-     * This node corresponds to node 'y' on the left half of
-     *   slide 158 of the Lecture 9 notes.
+	 *   at the input node.
+	 * This node corresponds to node 'y' on the left half of
+	 *   slide 158 of the Lecture 9 notes.
 	 * Returns the (possibly different) root of the rebalanced
-     *   subtree.
+	 *   subtree.
 	 *
 	 * @param parent the root of the subtree to rotate
 	 * @return the new root of the rotated subtree; i.e. the 
-     *         node taking the place of parent
+	 *         node taking the place of parent
 	 * <p>
-     */
-	private AVLTreeNode<T> rightRotate(AVLTreeNode<T> parent) {
-	    //FIXME: rotate a parent node to the right
-        return null;
+	 */
+	//i wrote code in this method
+	private AVLTreeNode<T> rightRotate(AVLTreeNode<T> parent) { //again, have to deal w all other nodes involved
+		AVLTreeNode leftKid = parent.Left();
+		AVLTreeNode extraLeftKid = leftKid.Left();
+		leftKid.setLeft(extraLeftKid);
+		leftKid.setRight(parent);
+		return leftKid;
+
+
 	}
 
 	/**
 	 * Performs a standard left-rotation on a subtree rooted
-     *   at the input node.
-     * This node corresponds to node 'x' on the right half of
-     *   slide 158 of the Lecture 9 notes.
+	 *   at the input node.
+	 * This node corresponds to node 'x' on the right half of
+	 *   slide 158 of the Lecture 9 notes.
 	 * Returns the (possibly different) root of the rebalanced
-     *   subtree.
+	 *   subtree.
 	 *
 	 * @param parent the root of the subtree to rotate
 	 * @return the new root of the rotated subtree; i.e. the 
-     *         node taking the place of parent
-     */
-	private AVLTreeNode<T> leftRotate(AVLTreeNode<T> parent) {
-        //FIXME: rotate a parent node to the left
-        return null;
+	 *         node taking the place of parent
+	 */
+	//i wrote this code also
+	private AVLTreeNode<T> leftRotate(AVLTreeNode<T> parent) { //how do i deal w all the other nodes
+		AVLTreeNode rightKid = parent.Right(); 
+		AVLTreeNode wrongKid = rightKid.Right();
+		rightKid.setLeft(parent);
+		rightKid.setLeft(wrongKid);
+		return rightKid;
+
 	}
 
 	/**
 	 * Recompute the height of the input node and store in its
-     *   corresponding instance variable.
+	 *   corresponding instance variable.
 	 *
 	 * @param node the node whose height is computed
-     */
+	 */
+	//i wrote this
 	private void fixHeight(AVLTreeNode<T> node){
-	    //FIXME: fix the height variable of a node
-        // Recommended: use a helper method to compute the height
-        //   of any subtrees necessary (see below).
+		int height = Math.max(node.getLeftHeight(), node.getRightHeight());
 	}
 
+	public int getHeight(AVLTreeNode<T> node) {
+		node = this.root;
+		int height = 1;
+		if (root.Right() == null && root.Left() == null) {
+			return height;
+		}
+		else {
+			return  height + Math.max(node.getLeftHeight(), node.getRightHeight());
+		}
+	}
 	//FIXME (recommended): create a helper method to determine the height of a subtree.
 
 	public boolean isEmpty() {

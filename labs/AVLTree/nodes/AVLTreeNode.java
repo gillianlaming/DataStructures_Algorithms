@@ -30,23 +30,14 @@ public class AVLTreeNode<T extends Comparable<T>> extends TreeNode<T> {
 	}
 	//i wrote this
 	public int getRightHeight() {
-		int height = 0;
-		AVLTreeNode<T> righty = this.right;
-		while (righty != null) {
-			righty = righty.right;
-			height++;
-		}
-		return height;
+		AVLTreeNode<T> righty = this.Right();
+		return righty != null?righty.height:0;
 	}
 	//i wrote this
 	public int getLeftHeight() {
-		int height = 0;
-		AVLTreeNode<T> lefty = this.left;
-		while (lefty != null) {
-			lefty = lefty.left;
-			height++;
-		}
-		return height;
+		AVLTreeNode<T> lefty = this.Left();
+		return lefty!= null ?lefty.height:0;
+		
 	}
 
 	public AVLTreeNode<T> Left() {

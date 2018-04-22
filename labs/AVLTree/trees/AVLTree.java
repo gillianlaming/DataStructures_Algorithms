@@ -101,8 +101,7 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 			}
 		}
 		fixHeight(node);
-		//	return rebalance(node);
-		return node;
+		return rebalance(node);
 
 	}
 
@@ -115,31 +114,62 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	 * @return the node at the root of the rebalanced subtree
 	 */
 	private AVLTreeNode<T> rebalance(AVLTreeNode<T> node) {
+
 		int bal = node.getBalance();
-		if (Math.abs(bal) >= 1) { 
+		if (Math.abs(bal) < 1) {
 			return node;
 		}
-		//else need to determine which case it is
-		else if (bal < 0) { //left heavy
-			//determine which case it is
-			if (node.Left().Left() != null) { //case 2 (left left)
-				AVLTreeNode<T> newRoot = rightRotate(node); //right rotate
-				//now what do i do with the new root?
+		
+		if (bal < -1) {
+			if (bal < -1 && (node.Left().getValue().compareTo(node.getValue()) < 0)) { 
+				bal = node.getBalance();
+				return rightRotate(node);
 			}
-			else { //case 4 (left right)
-				AVLTreeNode<T> newRoot = leftRotate(rightRotate(node)); //right rotate //left rotate
+			if (bal < -1 && (node.Left().getValue().compareTo(node.getValue()) > 0)) {
+				node.setLeft(leftRotate(node.Left()));
+				return rightRotate(node);
 			}
 		}
-
-		else if (bal > 0) { //right heavy
-			if (node.Right().Right() != null) { //case 1 (right right)
-				AVLTreeNode<T> newRoot = leftRotate(node); //left rotate
+		else {
+			if (bal > 1 && (node.getValue().compareTo(node.Right().getValue()) < 0)) {
+				return leftRotate(node);
 			}
-			else { //case 3 (right left)
-				AVLTreeNode<T> newRoot = rightRotate(leftRotate(node)); //left rotate, right rotate
+			if (bal > 1 && (node.Right().getValue().compareTo(node.getValue()) < 0)) {
+				node.setRight(rightRotate(node.Right()));
+				return leftRotate(node);
 			}
 		}
 		return node;
+
+		//else need to determine which case it is
+		//		else if (bal < 0) { //left heavy
+		//			//determine which case it is
+		//			if (node.Left().Left() != null) { //case 2 (left left)
+		//				AVLTreeNode<T> newRoot = rightRotate(node);//right rotate
+		//				fixHeight(newRoot);
+		//				return newRoot;
+		//				//now what do i do with the new root?
+		//			}
+		//			else { //case 4 (left right)
+		//				AVLTreeNode<T> newRoot = leftRotate(rightRotate(node)); //right rotate //left rotate
+		//				fixHeight(newRoot);
+		//				return newRoot;
+		//			}
+		//		}
+		//
+		//		else if (bal > 0) { //right heavy
+		//			if (node.Right().Right() != null) { //case 1 (right right)
+		//				AVLTreeNode<T> newRoot = leftRotate(node); //left rotate
+		//				fixHeight(newRoot);
+		//				return newRoot;
+		//			}
+		//			else { //case 3 (right left)
+		//				AVLTreeNode<T> newRoot = rightRotate(leftRotate(node)); //left rotate, right rotate
+		//				fixHeight(newRoot);
+		//				return newRoot;
+		//			}
+		//		}
+		//		return node;
 	}
 
 	/**
@@ -156,20 +186,23 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	 * <p>
 	 */
 	//i wrote code in this method
-	private AVLTreeNode<T> rightRotate(AVLTreeNode<T> parent) { //again, have to deal w all other nodes involved
+	private AVLTreeNode<T> rightRotate(AVLTreeNode<T> parent) { 
+		
 		AVLTreeNode<T> leftKid = parent.Left();
+		if (leftKid.Right() == null) {
+			System.out.println("something is null");
+		}
 		AVLTreeNode<T> other = leftKid.Right();
+
+		
 		//find left subtree
-		parent.setParent(leftKid);
+		//	parent.setParent(leftKid);
 		leftKid.setRight(parent);
 		parent.setLeft(other);
-		parent.height = Math.max(parent.getLeftHeight(), parent.getRightHeight()) + 1;
-		leftKid.height = Math.max(leftKid.getLeftHeight(), leftKid.getRightHeight()) + 1;
-
+		
+		fixHeight(parent);
+		fixHeight(leftKid);
 		return leftKid;
-
-
-
 	}
 
 	/**
@@ -187,13 +220,17 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	private AVLTreeNode<T> leftRotate(AVLTreeNode<T> parent) { //how do i deal w all the other nodes
 		AVLTreeNode<T> rightKid = parent.Right(); 
 		AVLTreeNode<T> other = rightKid.Left();
+		if (other == null) {
+			System.out.println("something else is null");
+		}
 
-		parent.setParent(rightKid);
+		//	parent.setParent(rightKid);
 		rightKid.setLeft(parent);
+	
 		parent.setRight(other);
-
-		parent.height = Math.max(parent.getLeftHeight(), parent.getRightHeight()) + 1;
-		rightKid.height = Math.max(rightKid.getLeftHeight(), rightKid.getRightHeight()) + 1;
+		
+		fixHeight(parent);
+		fixHeight(rightKid);
 
 		return rightKid;
 
@@ -221,7 +258,6 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 			return  height + Math.max(node.getLeftHeight(), node.getRightHeight());
 		}
 	}
-	//FIXME (recommended): create a helper method to determine the height of a subtree.
 
 	public boolean isEmpty() {
 		return this.root == null;

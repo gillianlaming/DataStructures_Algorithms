@@ -23,10 +23,8 @@ public class AVLTreeNode<T extends Comparable<T>> extends TreeNode<T> {
 	 *   @return current balance value of this node
 	 */
 	//i wrote this
-	public int getBalance() {		//this is not returning the right thing i do not think
-
+	public int getBalance() {	
 		return getRightHeight() - getLeftHeight();
-
 	}
 	//i wrote this
 	public int getRightHeight() {

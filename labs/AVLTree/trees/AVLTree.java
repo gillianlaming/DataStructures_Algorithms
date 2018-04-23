@@ -8,14 +8,12 @@ import java.util.LinkedList;
 public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	private AVLTreeNode<T> root;
 	public Ticker ticker;
-	public int balanceFactor; //i added
 	public int height; //i added
 
 	public AVLTree(Ticker t) {
 		super();
 		this.root = null;
 		this.ticker = t;
-		this.balanceFactor = 0;
 
 	}
 
@@ -66,12 +64,9 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	public AVLTreeNode<T> Insert(T value) { 
 
 		AVLTreeNode<T> toInsert = new AVLTreeNode<T>(value);
-
 		this.root = insertHelper(this.root, toInsert);
 		size++;
 		return toInsert;
-
-
 	}
 
 	/**
@@ -93,13 +88,13 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 			if (toInsert.getValue().compareTo(node.getValue()) < 0 ) {
 				node.setLeft(insertHelper(node.Left(), toInsert));
 				node.Left().setParent(node);
-
 			}
 			else {
 				node.setRight(insertHelper(node.Right(), toInsert));
 				node.Right().setParent(node);
 			}
 		}
+
 		fixHeight(node);
 		return rebalance(node);
 
@@ -115,61 +110,54 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	 */
 	private AVLTreeNode<T> rebalance(AVLTreeNode<T> node) {
 
+		//	int bal = node.getBalance();
 		int bal = node.getBalance();
-		if (Math.abs(bal) < 1) {
+		AVLTreeNode<T> grandparent = node.Parent();
+		T val = node.getValue();
+		if (Math.abs(bal) <= 1) {
 			return node;
 		}
-		
-		if (bal < -1) {
-			if (bal < -1 && (node.Left().getValue().compareTo(node.getValue()) < 0)) { 
-				bal = node.getBalance();
-				return rightRotate(node);
-			}
-			if (bal < -1 && (node.Left().getValue().compareTo(node.getValue()) > 0)) {
-				node.setLeft(leftRotate(node.Left()));
-				return rightRotate(node);
-			}
-		}
-		else {
-			if (bal > 1 && (node.getValue().compareTo(node.Right().getValue()) < 0)) {
-				return leftRotate(node);
-			}
-			if (bal > 1 && (node.Right().getValue().compareTo(node.getValue()) < 0)) {
-				node.setRight(rightRotate(node.Right()));
-				return leftRotate(node);
-			}
-		}
-		return node;
 
-		//else need to determine which case it is
-		//		else if (bal < 0) { //left heavy
-		//			//determine which case it is
-		//			if (node.Left().Left() != null) { //case 2 (left left)
-		//				AVLTreeNode<T> newRoot = rightRotate(node);//right rotate
-		//				fixHeight(newRoot);
-		//				return newRoot;
-		//				//now what do i do with the new root?
-		//			}
-		//			else { //case 4 (left right)
-		//				AVLTreeNode<T> newRoot = leftRotate(rightRotate(node)); //right rotate //left rotate
-		//				fixHeight(newRoot);
-		//				return newRoot;
-		//			}
-		//		}
-		//
-		//		else if (bal > 0) { //right heavy
-		//			if (node.Right().Right() != null) { //case 1 (right right)
-		//				AVLTreeNode<T> newRoot = leftRotate(node); //left rotate
-		//				fixHeight(newRoot);
-		//				return newRoot;
-		//			}
-		//			else { //case 3 (right left)
-		//				AVLTreeNode<T> newRoot = rightRotate(leftRotate(node)); //left rotate, right rotate
-		//				fixHeight(newRoot);
-		//				return newRoot;
-		//			}
-		//		}
-		//		return node;
+		AVLTreeNode<T> node2 = node;
+
+		if (bal == -2) {
+
+			//if ((node.Left().getValue().compareTo(val) < 0)) {
+
+
+			//			if ((node.Left().getValue().compareTo(val) > 0)) { 
+			if (node.Left().getBalance() == -1) {
+
+				System.out.println("hello 1");
+				node2 = rightRotate(node);
+				//node2.setParent(grandparent);
+			}
+			else {
+				System.out.println("hello 2");
+				node.setLeft(leftRotate(node.Left()));
+				node2 = rightRotate(node);
+			}
+		}
+		
+		else {
+			if (node.Right().getBalance() == 1) {
+				System.out.println("hello 3");
+				node2 = leftRotate(node);
+			}
+			else  {
+				System.out.println("hello 4");
+				node.setRight(rightRotate(node.Right()));
+				node2 = leftRotate(node);
+			}
+		}
+		fixHeight(node2);
+		node2.setParent(grandparent);
+
+		//getBalance(node2);
+
+		return node2;
+
+
 	}
 
 	/**
@@ -187,21 +175,20 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	 */
 	//i wrote code in this method
 	private AVLTreeNode<T> rightRotate(AVLTreeNode<T> parent) { 
-		
+
 		AVLTreeNode<T> leftKid = parent.Left();
-		if (leftKid.Right() == null) {
-			System.out.println("something is null");
-		}
+
+
 		AVLTreeNode<T> other = leftKid.Right();
 
-		
-		//find left subtree
-		//	parent.setParent(leftKid);
 		leftKid.setRight(parent);
 		parent.setLeft(other);
-		
+
+
 		fixHeight(parent);
 		fixHeight(leftKid);
+
+
 		return leftKid;
 	}
 
@@ -220,17 +207,14 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	private AVLTreeNode<T> leftRotate(AVLTreeNode<T> parent) { //how do i deal w all the other nodes
 		AVLTreeNode<T> rightKid = parent.Right(); 
 		AVLTreeNode<T> other = rightKid.Left();
-		if (other == null) {
-			System.out.println("something else is null");
-		}
 
-		//	parent.setParent(rightKid);
 		rightKid.setLeft(parent);
-	
 		parent.setRight(other);
-		
+
+
 		fixHeight(parent);
 		fixHeight(rightKid);
+
 
 		return rightKid;
 
@@ -242,26 +226,26 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	 *
 	 * @param node the node whose height is computed
 	 */
-	//i wrote this
 	private void fixHeight(AVLTreeNode<T> node){
-		node.height = Math.max(node.getLeftHeight(), node.getRightHeight()) + 1; //does this take too much time
-		this.balanceFactor = node.getBalance();
+		node.height = Math.max(node.getLeftHeight(), node.getRightHeight()) + 1 ; 
+		//node.getBalance();
+		getBalance(node);
 	}
 
-	public int getHeight(AVLTreeNode<T> node) {
-		node = this.root;
-		int height = 1;
-		if (root.Right() == null && root.Left() == null) {
-			return height;
+
+	public int getBalance(AVLTreeNode<T> node) {
+		if (node == null) {
+			return 0;
 		}
 		else {
-			return  height + Math.max(node.getLeftHeight(), node.getRightHeight());
+			return node.getBalance();
 		}
 	}
 
 	public boolean isEmpty() {
 		return this.root == null;
 	}
+
 
 	public AVLTreeNode<T> minimum() {
 		return minimumOfSubtree(this.root);

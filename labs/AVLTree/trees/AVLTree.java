@@ -29,13 +29,11 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	 * @param value the value to be found
 	 * @return the node element if it exists/otherwise null
 	 */
-	//not inserting the third element
-	//i wrote everything in this method
+
 	public AVLTreeNode<T> Find(T value) {
 		return findHelper(value, this.root);
 	}
 
-	// helper function for find, see above for description.
 	private AVLTreeNode<T> findHelper(T value, AVLTreeNode<T> curr) {		
 		if (curr == null) {
 			return curr;
@@ -110,7 +108,6 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	 */
 	private AVLTreeNode<T> rebalance(AVLTreeNode<T> node) {
 
-		//	int bal = node.getBalance();
 		int bal = node.getBalance();
 		AVLTreeNode<T> grandparent = node.Parent();
 		T val = node.getValue();
@@ -121,16 +118,10 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 		AVLTreeNode<T> node2 = node;
 
 		if (bal == -2) {
-
-			//if ((node.Left().getValue().compareTo(val) < 0)) {
-
-
-			//			if ((node.Left().getValue().compareTo(val) > 0)) { 
 			if (node.Left().getBalance() == -1) {
 
 				System.out.println("hello 1");
 				node2 = rightRotate(node);
-				//node2.setParent(grandparent);
 			}
 			else {
 				System.out.println("hello 2");
@@ -152,9 +143,6 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 		}
 		fixHeight(node2);
 		node2.setParent(grandparent);
-
-		//getBalance(node2);
-
 		return node2;
 
 
@@ -173,21 +161,17 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	 *         node taking the place of parent
 	 * <p>
 	 */
-	//i wrote code in this method
 	private AVLTreeNode<T> rightRotate(AVLTreeNode<T> parent) { 
 
 		AVLTreeNode<T> leftKid = parent.Left();
-
 
 		AVLTreeNode<T> other = leftKid.Right();
 
 		leftKid.setRight(parent);
 		parent.setLeft(other);
 
-
 		fixHeight(parent);
 		fixHeight(leftKid);
-
 
 		return leftKid;
 	}
@@ -228,10 +212,9 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	 */
 	private void fixHeight(AVLTreeNode<T> node){
 		node.height = Math.max(node.getLeftHeight(), node.getRightHeight()) + 1 ; 
-		//node.getBalance();
+	
 		getBalance(node);
 	}
-
 
 	public int getBalance(AVLTreeNode<T> node) {
 		if (node == null) {

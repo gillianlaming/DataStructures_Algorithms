@@ -119,12 +119,9 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 
 		if (bal == -2) {
 			if (node.Left().getBalance() == -1) {
-
-				System.out.println("hello 1");
 				node2 = rightRotate(node);
 			}
 			else {
-				System.out.println("hello 2");
 				node.setLeft(leftRotate(node.Left()));
 				node2 = rightRotate(node);
 			}
@@ -132,11 +129,9 @@ public class AVLTree<T extends Comparable<T>> extends BST<T> {
 		
 		else {
 			if (node.Right().getBalance() == 1) {
-				System.out.println("hello 3");
 				node2 = leftRotate(node);
 			}
 			else  {
-				System.out.println("hello 4");
 				node.setRight(rightRotate(node.Right()));
 				node2 = leftRotate(node);
 			}

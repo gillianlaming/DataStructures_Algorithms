@@ -15,14 +15,12 @@ public class AVLTreeNode<T extends Comparable<T>> extends TreeNode<T> {
 		this.height = 0;
 
 	}
-	//O(1) time!!
 	/* Returns the balance of a tree node,
 	 *   where balance is defined as the height of a node's right subtree
 	 *   minus the height of a node's left subtree.
 	 *
 	 *   @return current balance value of this node
 	 */
-	//i wrote this
 	
 	public int getBalance() {	
 		

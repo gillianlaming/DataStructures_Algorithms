@@ -8,13 +8,12 @@ import java.util.LinkedList;
 public class AVLTree<T extends Comparable<T>> extends BST<T> {
 	private AVLTreeNode<T> root;
 	public Ticker ticker;
-	public int height; //i added
+	public int height; 
 
 	public AVLTree(Ticker t) {
 		super();
 		this.root = null;
 		this.ticker = t;
-
 	}
 
 	public AVLTreeNode<T> Root() {

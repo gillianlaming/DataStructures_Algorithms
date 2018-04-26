@@ -7,7 +7,7 @@ Your TA's name:
 Students in your studio group:
 
     Name        Student ID (begins with a 4)
-	
+	Gillian Laming	457507
 1.
 2.
 3.
@@ -20,14 +20,21 @@ Part 1. Introduction
 
 
 1. Give your own definition for what a crypographic key is 
+A cryptographic key is a string of bits that are used to change normal text into encoded text, also determines the output.
 
 2. Explain the differences between public, private, and shared keys 
+a public key is one know by the public, a private key is one only known by one person, and a shared key is a key known by the two people
+exchanging encoded messages.
 
 3. Is Diffie-Hellmann an encryption algorithm? **
-
+no, it is a method for exchanging a shared key.
+ 
 4. Encryption is often confused with hashing, can you think of a reason why? what is the main difference? 
+hashing you assign a numeric value to an object, encryption you change the object so that it looks like a different object. you can't
+de-hash a value, but you can de-crypt a value.
 
 5. bonus: should passwords be hashed or encrypted before they are stored in a database? why? 
+hashed, because it's more secure
 
 
 Part 2. Caesar Ciphers
@@ -35,19 +42,19 @@ Part 2. Caesar Ciphers
 
 For the following messages and keys, give the output of the caesar encryption:
 
-1.
+1.HFY
 
-2. 
+2.CHEUD
 
-3. 
+3. PAS
 
 for the following message/encrypted message pairs, give the key
 
-1. 
+1. 7
 
-2. 
+2. 5
 
-3.
+3. 15
 
 
 Part 3. Diffie-Hellmann Key Exchanges
@@ -56,11 +63,16 @@ Part 3. Diffie-Hellmann Key Exchanges
 before starting make sure you are able to answer the following questions:
 
 1. what values must be agreed upon by both parties beforehand? 
+the base and the mod values
 
 2. how many private keys are used? 
+two- one for each person
 
 3. what is the equation to calculate the public keys?
+base^(private key) % modulus
 
 4. what the equation to produce the final shared keys? 
+shared value^(private key) % modulus
 
 5. how many of the secret numbers need to be known in order to crack the algorithm? 
+just your own!

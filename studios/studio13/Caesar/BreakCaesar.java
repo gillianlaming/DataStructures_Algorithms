@@ -34,7 +34,18 @@ public class BreakCaesar {
 		// The chars array conveniently has all the characters of the
 		//    rotated message
 		// 
-		return 0; // FIXME
+		int rotation = 0;
+		for (int i = 0; i < message.length-1; ++i) {
+			if (chars[i] == 'L') { 
+				char hi = 'i';
+				rotation = chars[i+1] - hi;
+				if (rotation < 0) {
+					rotation = 26 + rotation;
+				}
+			}
+			
+		}
+		return rotation;
 	}
 	
 	/**

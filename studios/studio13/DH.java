@@ -2,6 +2,9 @@ package studio13;
 
 import static org.junit.Assert.assertEquals;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 public class DH {
 	
 	private final long privKey;
@@ -21,7 +24,8 @@ public class DH {
 	 * @return
 	 */
 	public long getPubKey() {
-		return 0; // FIXME
+		//long num = (long)(Math.pow(this.base, privKey) %this.modulus);
+		return this.modexp.toThePower(this.privKey);
 	}
 	
 	/**
@@ -31,16 +35,17 @@ public class DH {
 	 * @return
 	 */
 	public long getAgreedNum(long otherPubKey) {
-		return 0;  // FIXME
+		return this.modexp.gToTheXModP(otherPubKey, privKey, modulus);
 	}
 
 	public static void main(String[] args) {
 		testLectureExample();
 		//FIXME: set Variables
-		int agreedBase = 1;
-		int agreedModulus = 1;
-		int mySecret = 1;
-		// FIXME: Construct a new DH object and generate the keys. hint, you will have to run this program more than once
+		int agreedBase = 5;
+		int agreedModulus = 77;
+		int mySecret = 19;
+		DH hello = new DH(agreedBase, agreedModulus, mySecret);
+		System.out.println(hello.getAgreedNum(69));
 	}
 
 	public static void testLectureExample() {

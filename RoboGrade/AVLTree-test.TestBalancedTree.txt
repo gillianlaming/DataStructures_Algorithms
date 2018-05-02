@@ -1,57 +1,20 @@
 -------------------
-CSE247 Robot tester starts testing AVLTree on 2018-05-02 00:14:02 -0500
+CSE247 Robot tester starts testing AVLTree on 2018-05-02 14:24:48 -0500
 
 ========
 Testing in ./GradingRepos/repos/cse247-s18-students-gdlaming: AVLTree as of 2018-04-26 00:05
 ========
 Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming
 Your branch is up-to-date with 'origin/master'.
-HEAD is now at 9f9be1f Merge remote-tracking branch 'upstream/master'
+HEAD is now at b66db57 robograde
 No local changes to save
 
-Updating 9f9be1f..a206dbb
+Updating b66db57..fb4190f
 Fast-forward
- RoboGrade/rabinkarp-TestRK.txt               | 1415 +++++++++++++-------------
- labs/AVLTree/nodes/AVLTreeNode.java          |  128 +--
- labs/AVLTree/test/TestBalancedTree.java      |   99 +-
- labs/AVLTree/trees/AVLTree.java              |  175 +++-
- labs/AVLTree/validate/BSTValidator.java      |    8 +
- studios/dh/demo/DemoCaesar.java              |   43 +
- studios/dh/demo/DemoDH.java                  |   38 +
- studios/dh/demo/DemoSendMessages.java        |   20 +
- studios/dh/demo/InteractiveSend.java         |   20 +
- studios/dh/testing/TestDH.java               |   54 +
- studios/dh/utils/Agent.java                  |   30 +
- studios/dh/utils/Caesared.java               |   71 ++
- studios/dh/utils/DHFactory.java              |   36 +
- studios/dh/utils/MExp.java                   |   84 ++
- studios/dh/utils/RandomWithBoundedLong.java  |   21 +
- studios/dh/utils/SendMessage.java            |   23 +
- studios/studio13/Caesar/BreakCaesar.java     |   65 ++
- studios/studio13/Caesar/TextBreakCaesar.java |   75 ++
- studios/studio13/DH.java                     |   60 ++
- studios/studio13/MExp.java                   |   80 ++
- studios/studio9/MultiplyHash.java            |    2 +-
- studiowriteups/studio12.txt                  |   63 ++
- studiowriteups/studio13.txt                  |   78 ++
- 23 files changed, 1859 insertions(+), 829 deletions(-)
- create mode 100644 studios/dh/demo/DemoCaesar.java
- create mode 100644 studios/dh/demo/DemoDH.java
- create mode 100644 studios/dh/demo/DemoSendMessages.java
- create mode 100644 studios/dh/demo/InteractiveSend.java
- create mode 100644 studios/dh/testing/TestDH.java
- create mode 100644 studios/dh/utils/Agent.java
- create mode 100644 studios/dh/utils/Caesared.java
- create mode 100644 studios/dh/utils/DHFactory.java
- create mode 100644 studios/dh/utils/MExp.java
- create mode 100644 studios/dh/utils/RandomWithBoundedLong.java
- create mode 100644 studios/dh/utils/SendMessage.java
- create mode 100644 studios/studio13/Caesar/BreakCaesar.java
- create mode 100644 studios/studio13/Caesar/TextBreakCaesar.java
- create mode 100644 studios/studio13/DH.java
- create mode 100644 studios/studio13/MExp.java
- create mode 100644 studiowriteups/studio12.txt
- create mode 100644 studiowriteups/studio13.txt
+ RoboGrade/AVLTree-test.TestUnbalancedTree.txt | 509 ++++++++++++++++++++++++++
+ labs/AVLTree/test/TestUnbalancedTree.java     |  19 +
+ 2 files changed, 528 insertions(+)
+ create mode 100644 RoboGrade/AVLTree-test.TestUnbalancedTree.txt
 Going back in time to: 2018-04-26 00:05
 At hash c5fdcce7c47e0fbd5ea44de808722e0527e75be2
 
@@ -137,58 +100,56 @@ test:
     [junit] Testing with duplicates size 9
     [junit] done
     [junit] Displaying a correct Tree of 50 unique integers:
-    [junit] Root-20
-    [junit] |  L-13
-    [junit] |  |  L-7
+    [junit] Root-25
+    [junit] |  L-12
+    [junit] |  |  L-6
     [junit] |  |  |  L-3
     [junit] |  |  |  |  L-1
     [junit] |  |  |  |  |  L-0
     [junit] |  |  |  |  |  R-2
-    [junit] |  |  |  |  R-5
-    [junit] |  |  |  |  |  L-4
-    [junit] |  |  |  |  |  R-6
-    [junit] |  |  |  R-9
+    [junit] |  |  |  |  R-4
+    [junit] |  |  |  |  |  R-5
+    [junit] |  |  |  R-10
     [junit] |  |  |  |  L-8
+    [junit] |  |  |  |  |  L-7
+    [junit] |  |  |  |  |  R-9
     [junit] |  |  |  |  R-11
-    [junit] |  |  |  |  |  L-10
-    [junit] |  |  |  |  |  R-12
-    [junit] |  |  R-16
-    [junit] |  |  |  L-14
-    [junit] |  |  |  |  R-15
-    [junit] |  |  |  R-18
-    [junit] |  |  |  |  L-17
-    [junit] |  |  |  |  R-19
-    [junit] |  R-32
-    [junit] |  |  L-27
-    [junit] |  |  |  L-23
-    [junit] |  |  |  |  L-22
-    [junit] |  |  |  |  |  L-21
-    [junit] |  |  |  |  R-25
-    [junit] |  |  |  |  |  L-24
-    [junit] |  |  |  |  |  R-26
-    [junit] |  |  |  R-29
-    [junit] |  |  |  |  L-28
-    [junit] |  |  |  |  R-31
-    [junit] |  |  |  |  |  L-30
-    [junit] |  |  R-40
-    [junit] |  |  |  L-36
-    [junit] |  |  |  |  L-34
-    [junit] |  |  |  |  |  L-33
-    [junit] |  |  |  |  |  R-35
-    [junit] |  |  |  |  R-38
+    [junit] |  |  R-18
+    [junit] |  |  |  L-15
+    [junit] |  |  |  |  L-14
+    [junit] |  |  |  |  |  L-13
+    [junit] |  |  |  |  R-16
+    [junit] |  |  |  |  |  R-17
+    [junit] |  |  |  R-22
+    [junit] |  |  |  |  L-20
+    [junit] |  |  |  |  |  L-19
+    [junit] |  |  |  |  |  R-21
+    [junit] |  |  |  |  R-23
+    [junit] |  |  |  |  |  R-24
+    [junit] |  R-36
+    [junit] |  |  L-31
+    [junit] |  |  |  L-28
+    [junit] |  |  |  |  L-27
+    [junit] |  |  |  |  |  L-26
+    [junit] |  |  |  |  R-30
+    [junit] |  |  |  |  |  L-29
+    [junit] |  |  |  R-33
+    [junit] |  |  |  |  L-32
+    [junit] |  |  |  |  R-35
+    [junit] |  |  |  |  |  L-34
+    [junit] |  |  R-44
+    [junit] |  |  |  L-39
+    [junit] |  |  |  |  L-38
     [junit] |  |  |  |  |  L-37
-    [junit] |  |  |  |  |  R-39
-    [junit] |  |  |  R-45
-    [junit] |  |  |  |  L-42
-    [junit] |  |  |  |  |  L-41
-    [junit] |  |  |  |  |  R-44
-    [junit] |  |  |  |  |  |  L-43
-    [junit] |  |  |  |  R-47
-    [junit] |  |  |  |  |  L-46
-    [junit] |  |  |  |  |  R-49
-    [junit] |  |  |  |  |  |  L-48
-    [junit] 
-    [junit] Root-58
+    [junit] |  |  |  |  R-41
+    [junit] |  |  |  |  |  L-40
+    [junit] |  |  |  |  |  R-43
+    [junit] |  |  |  |  |  |  L-42
+    [junit] |  |  |  R-47
+    [junit] |  |  |  |  L-46
+    [junit] |  |  |  |  |  L-45
+    [junit] |  |  |  |  R-49
+    [junit] |  |  |  |  |  L-48
     [junit] 
     [junit] Final Tree:
     [junit] Root-100
@@ -207,123 +168,7 @@ test:
     [junit] |  |  |  L-160
     [junit] |  |  |  R-190
     [junit] 
-    [junit] Root-43
-    [junit] |  L-19
-    [junit] |  |  L-10
-    [junit] |  |  |  L-5
-    [junit] |  |  |  |  L-2
-    [junit] |  |  |  |  |  L-0
-    [junit] |  |  |  |  |  |  R-1
-    [junit] |  |  |  |  |  R-4
-    [junit] |  |  |  |  |  |  L-3
-    [junit] |  |  |  |  R-8
-    [junit] |  |  |  |  |  L-7
-    [junit] |  |  |  |  |  |  L-6
-    [junit] |  |  |  |  |  R-9
-    [junit] |  |  |  R-13
-    [junit] |  |  |  |  L-11
-    [junit] |  |  |  |  |  R-12
-    [junit] |  |  |  |  R-16
-    [junit] |  |  |  |  |  L-15
-    [junit] |  |  |  |  |  |  L-14
-    [junit] |  |  |  |  |  R-18
-    [junit] |  |  |  |  |  |  L-17
-    [junit] |  |  R-29
-    [junit] |  |  |  L-23
-    [junit] |  |  |  |  L-21
-    [junit] |  |  |  |  |  L-20
-    [junit] |  |  |  |  |  R-22
-    [junit] |  |  |  |  R-25
-    [junit] |  |  |  |  |  L-24
-    [junit] |  |  |  |  |  R-27
-    [junit] |  |  |  |  |  |  L-26
-    [junit] |  |  |  |  |  |  R-28
-    [junit] |  |  |  R-36
-    [junit] |  |  |  |  L-33
-    [junit] |  |  |  |  |  L-31
-    [junit] |  |  |  |  |  |  L-30
-    [junit] |  |  |  |  |  |  R-32
-    [junit] |  |  |  |  |  R-35
-    [junit] |  |  |  |  |  |  L-34
-    [junit] |  |  |  |  R-40
-    [junit] |  |  |  |  |  L-38
-    [junit] |  |  |  |  |  |  L-37
-    [junit] |  |  |  |  |  |  R-39
-    [junit] |  |  |  |  |  R-42
-    [junit] |  |  |  |  |  |  L-41
-    [junit] |  R-84
-    [junit] |  |  L-61
-    [junit] |  |  |  L-53
-    [junit] |  |  |  |  L-50
-    [junit] |  |  |  |  |  L-46
-    [junit] |  |  |  |  |  |  L-44
-    [junit] |  |  |  |  |  |  |  R-45
-    [junit] |  |  |  |  |  |  R-48
-    [junit] |  |  |  |  |  |  |  L-47
-    [junit] |  |  |  |  |  |  |  R-49
-    [junit] |  |  |  |  |  R-52
-    [junit] |  |  |  |  |  |  L-51
-    [junit] |  |  |  |  R-56
-    [junit] |  |  |  |  |  L-54
-    [junit] |  |  |  |  |  |  R-55
-    [junit] |  |  |  |  |  R-59
-    [junit] |  |  |  |  |  |  L-58
-    [junit] |  |  |  |  |  |  |  L-57
-    [junit] |  |  |  |  |  |  R-60
-    [junit] |  |  |  R-73
-    [junit] |  |  |  |  L-65
-    [junit] |  |  |  |  |  L-63
-    [junit] |  |  |  |  |  |  L-62
-    [junit] |  |  |  |  |  |  R-64
-    [junit] |  |  |  |  |  R-69
-    [junit] |  |  |  |  |  |  L-67
-    [junit] |  |  |  |  |  |  |  L-66
-    [junit] |  |  |  |  |  |  |  R-68
-    [junit] |  |  |  |  |  |  R-71
-    [junit] |  |  |  |  |  |  |  L-70
-    [junit] |  |  |  |  |  |  |  R-72
-    [junit] |  |  |  |  R-79
-    [junit] |  |  |  |  |  L-75
-    [junit] |  |  |  |  |  |  L-74
-    [junit] |  |  |  |  |  |  R-77
-    [junit] |  |  |  |  |  |  |  L-76
-    [junit] |  |  |  |  |  |  |  R-78
-    [junit] |  |  |  |  |  R-81
-    [junit] |  |  |  |  |  |  L-80
-    [junit] |  |  |  |  |  |  R-83
-    [junit] |  |  |  |  |  |  |  L-82
-    [junit] |  |  R-100
-    [junit] |  |  |  L-92
-    [junit] |  |  |  |  L-87
-    [junit] |  |  |  |  |  L-85
-    [junit] |  |  |  |  |  |  R-86
-    [junit] |  |  |  |  |  R-90
-    [junit] |  |  |  |  |  |  L-88
-    [junit] |  |  |  |  |  |  |  R-89
-    [junit] |  |  |  |  |  |  R-91
-    [junit] |  |  |  |  R-96
-    [junit] |  |  |  |  |  L-94
-    [junit] |  |  |  |  |  |  L-93
-    [junit] |  |  |  |  |  |  R-95
-    [junit] |  |  |  |  |  R-98
-    [junit] |  |  |  |  |  |  L-97
-    [junit] |  |  |  |  |  |  R-99
-    [junit] |  |  |  R-107
-    [junit] |  |  |  |  L-103
-    [junit] |  |  |  |  |  L-101
-    [junit] |  |  |  |  |  |  R-102
-    [junit] |  |  |  |  |  R-105
-    [junit] |  |  |  |  |  |  L-104
-    [junit] |  |  |  |  |  |  R-106
-    [junit] |  |  |  |  R-111
-    [junit] |  |  |  |  |  L-109
-    [junit] |  |  |  |  |  |  L-108
-    [junit] |  |  |  |  |  |  R-110
-    [junit] |  |  |  |  |  R-113
-    [junit] |  |  |  |  |  |  L-112
-    [junit] |  |  |  |  |  |  R-114
-    [junit] 
-    [junit] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.139 sec
+    [junit] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.119 sec
     [junit] Output:
     [junit] Testing unique size 0
     [junit] done
@@ -366,58 +211,56 @@ test:
     [junit] Testing with duplicates size 9
     [junit] done
     [junit] Displaying a correct Tree of 50 unique integers:
-    [junit] Root-20
-    [junit] |  L-13
-    [junit] |  |  L-7
+    [junit] Root-25
+    [junit] |  L-12
+    [junit] |  |  L-6
     [junit] |  |  |  L-3
     [junit] |  |  |  |  L-1
     [junit] |  |  |  |  |  L-0
     [junit] |  |  |  |  |  R-2
-    [junit] |  |  |  |  R-5
-    [junit] |  |  |  |  |  L-4
-    [junit] |  |  |  |  |  R-6
-    [junit] |  |  |  R-9
+    [junit] |  |  |  |  R-4
+    [junit] |  |  |  |  |  R-5
+    [junit] |  |  |  R-10
     [junit] |  |  |  |  L-8
+    [junit] |  |  |  |  |  L-7
+    [junit] |  |  |  |  |  R-9
     [junit] |  |  |  |  R-11
-    [junit] |  |  |  |  |  L-10
-    [junit] |  |  |  |  |  R-12
-    [junit] |  |  R-16
-    [junit] |  |  |  L-14
-    [junit] |  |  |  |  R-15
-    [junit] |  |  |  R-18
-    [junit] |  |  |  |  L-17
-    [junit] |  |  |  |  R-19
-    [junit] |  R-32
-    [junit] |  |  L-27
-    [junit] |  |  |  L-23
-    [junit] |  |  |  |  L-22
-    [junit] |  |  |  |  |  L-21
-    [junit] |  |  |  |  R-25
-    [junit] |  |  |  |  |  L-24
-    [junit] |  |  |  |  |  R-26
-    [junit] |  |  |  R-29
-    [junit] |  |  |  |  L-28
-    [junit] |  |  |  |  R-31
-    [junit] |  |  |  |  |  L-30
-    [junit] |  |  R-40
-    [junit] |  |  |  L-36
-    [junit] |  |  |  |  L-34
-    [junit] |  |  |  |  |  L-33
-    [junit] |  |  |  |  |  R-35
-    [junit] |  |  |  |  R-38
+    [junit] |  |  R-18
+    [junit] |  |  |  L-15
+    [junit] |  |  |  |  L-14
+    [junit] |  |  |  |  |  L-13
+    [junit] |  |  |  |  R-16
+    [junit] |  |  |  |  |  R-17
+    [junit] |  |  |  R-22
+    [junit] |  |  |  |  L-20
+    [junit] |  |  |  |  |  L-19
+    [junit] |  |  |  |  |  R-21
+    [junit] |  |  |  |  R-23
+    [junit] |  |  |  |  |  R-24
+    [junit] |  R-36
+    [junit] |  |  L-31
+    [junit] |  |  |  L-28
+    [junit] |  |  |  |  L-27
+    [junit] |  |  |  |  |  L-26
+    [junit] |  |  |  |  R-30
+    [junit] |  |  |  |  |  L-29
+    [junit] |  |  |  R-33
+    [junit] |  |  |  |  L-32
+    [junit] |  |  |  |  R-35
+    [junit] |  |  |  |  |  L-34
+    [junit] |  |  R-44
+    [junit] |  |  |  L-39
+    [junit] |  |  |  |  L-38
     [junit] |  |  |  |  |  L-37
-    [junit] |  |  |  |  |  R-39
-    [junit] |  |  |  R-45
-    [junit] |  |  |  |  L-42
-    [junit] |  |  |  |  |  L-41
-    [junit] |  |  |  |  |  R-44
-    [junit] |  |  |  |  |  |  L-43
-    [junit] |  |  |  |  R-47
-    [junit] |  |  |  |  |  L-46
-    [junit] |  |  |  |  |  R-49
-    [junit] |  |  |  |  |  |  L-48
-    [junit] 
-    [junit] Root-58
+    [junit] |  |  |  |  R-41
+    [junit] |  |  |  |  |  L-40
+    [junit] |  |  |  |  |  R-43
+    [junit] |  |  |  |  |  |  L-42
+    [junit] |  |  |  R-47
+    [junit] |  |  |  |  L-46
+    [junit] |  |  |  |  |  L-45
+    [junit] |  |  |  |  R-49
+    [junit] |  |  |  |  |  L-48
     [junit] 
     [junit] Final Tree:
     [junit] Root-100
@@ -436,124 +279,8 @@ test:
     [junit] |  |  |  L-160
     [junit] |  |  |  R-190
     [junit] 
-    [junit] Root-43
-    [junit] |  L-19
-    [junit] |  |  L-10
-    [junit] |  |  |  L-5
-    [junit] |  |  |  |  L-2
-    [junit] |  |  |  |  |  L-0
-    [junit] |  |  |  |  |  |  R-1
-    [junit] |  |  |  |  |  R-4
-    [junit] |  |  |  |  |  |  L-3
-    [junit] |  |  |  |  R-8
-    [junit] |  |  |  |  |  L-7
-    [junit] |  |  |  |  |  |  L-6
-    [junit] |  |  |  |  |  R-9
-    [junit] |  |  |  R-13
-    [junit] |  |  |  |  L-11
-    [junit] |  |  |  |  |  R-12
-    [junit] |  |  |  |  R-16
-    [junit] |  |  |  |  |  L-15
-    [junit] |  |  |  |  |  |  L-14
-    [junit] |  |  |  |  |  R-18
-    [junit] |  |  |  |  |  |  L-17
-    [junit] |  |  R-29
-    [junit] |  |  |  L-23
-    [junit] |  |  |  |  L-21
-    [junit] |  |  |  |  |  L-20
-    [junit] |  |  |  |  |  R-22
-    [junit] |  |  |  |  R-25
-    [junit] |  |  |  |  |  L-24
-    [junit] |  |  |  |  |  R-27
-    [junit] |  |  |  |  |  |  L-26
-    [junit] |  |  |  |  |  |  R-28
-    [junit] |  |  |  R-36
-    [junit] |  |  |  |  L-33
-    [junit] |  |  |  |  |  L-31
-    [junit] |  |  |  |  |  |  L-30
-    [junit] |  |  |  |  |  |  R-32
-    [junit] |  |  |  |  |  R-35
-    [junit] |  |  |  |  |  |  L-34
-    [junit] |  |  |  |  R-40
-    [junit] |  |  |  |  |  L-38
-    [junit] |  |  |  |  |  |  L-37
-    [junit] |  |  |  |  |  |  R-39
-    [junit] |  |  |  |  |  R-42
-    [junit] |  |  |  |  |  |  L-41
-    [junit] |  R-84
-    [junit] |  |  L-61
-    [junit] |  |  |  L-53
-    [junit] |  |  |  |  L-50
-    [junit] |  |  |  |  |  L-46
-    [junit] |  |  |  |  |  |  L-44
-    [junit] |  |  |  |  |  |  |  R-45
-    [junit] |  |  |  |  |  |  R-48
-    [junit] |  |  |  |  |  |  |  L-47
-    [junit] |  |  |  |  |  |  |  R-49
-    [junit] |  |  |  |  |  R-52
-    [junit] |  |  |  |  |  |  L-51
-    [junit] |  |  |  |  R-56
-    [junit] |  |  |  |  |  L-54
-    [junit] |  |  |  |  |  |  R-55
-    [junit] |  |  |  |  |  R-59
-    [junit] |  |  |  |  |  |  L-58
-    [junit] |  |  |  |  |  |  |  L-57
-    [junit] |  |  |  |  |  |  R-60
-    [junit] |  |  |  R-73
-    [junit] |  |  |  |  L-65
-    [junit] |  |  |  |  |  L-63
-    [junit] |  |  |  |  |  |  L-62
-    [junit] |  |  |  |  |  |  R-64
-    [junit] |  |  |  |  |  R-69
-    [junit] |  |  |  |  |  |  L-67
-    [junit] |  |  |  |  |  |  |  L-66
-    [junit] |  |  |  |  |  |  |  R-68
-    [junit] |  |  |  |  |  |  R-71
-    [junit] |  |  |  |  |  |  |  L-70
-    [junit] |  |  |  |  |  |  |  R-72
-    [junit] |  |  |  |  R-79
-    [junit] |  |  |  |  |  L-75
-    [junit] |  |  |  |  |  |  L-74
-    [junit] |  |  |  |  |  |  R-77
-    [junit] |  |  |  |  |  |  |  L-76
-    [junit] |  |  |  |  |  |  |  R-78
-    [junit] |  |  |  |  |  R-81
-    [junit] |  |  |  |  |  |  L-80
-    [junit] |  |  |  |  |  |  R-83
-    [junit] |  |  |  |  |  |  |  L-82
-    [junit] |  |  R-100
-    [junit] |  |  |  L-92
-    [junit] |  |  |  |  L-87
-    [junit] |  |  |  |  |  L-85
-    [junit] |  |  |  |  |  |  R-86
-    [junit] |  |  |  |  |  R-90
-    [junit] |  |  |  |  |  |  L-88
-    [junit] |  |  |  |  |  |  |  R-89
-    [junit] |  |  |  |  |  |  R-91
-    [junit] |  |  |  |  R-96
-    [junit] |  |  |  |  |  L-94
-    [junit] |  |  |  |  |  |  L-93
-    [junit] |  |  |  |  |  |  R-95
-    [junit] |  |  |  |  |  R-98
-    [junit] |  |  |  |  |  |  L-97
-    [junit] |  |  |  |  |  |  R-99
-    [junit] |  |  |  R-107
-    [junit] |  |  |  |  L-103
-    [junit] |  |  |  |  |  L-101
-    [junit] |  |  |  |  |  |  R-102
-    [junit] |  |  |  |  |  R-105
-    [junit] |  |  |  |  |  |  L-104
-    [junit] |  |  |  |  |  |  R-106
-    [junit] |  |  |  |  R-111
-    [junit] |  |  |  |  |  L-109
-    [junit] |  |  |  |  |  |  L-108
-    [junit] |  |  |  |  |  |  R-110
-    [junit] |  |  |  |  |  R-113
-    [junit] |  |  |  |  |  |  L-112
-    [junit] |  |  |  |  |  |  R-114
     [junit] 
-    [junit] 
-    [junit] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.139 sec
+    [junit] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.119 sec
     [junit] ------------- Standard Output ---------------
     [junit] Testing unique size 0
     [junit] done
@@ -596,58 +323,56 @@ test:
     [junit] Testing with duplicates size 9
     [junit] done
     [junit] Displaying a correct Tree of 50 unique integers:
-    [junit] Root-20
-    [junit] |  L-13
-    [junit] |  |  L-7
+    [junit] Root-25
+    [junit] |  L-12
+    [junit] |  |  L-6
     [junit] |  |  |  L-3
     [junit] |  |  |  |  L-1
     [junit] |  |  |  |  |  L-0
     [junit] |  |  |  |  |  R-2
-    [junit] |  |  |  |  R-5
-    [junit] |  |  |  |  |  L-4
-    [junit] |  |  |  |  |  R-6
-    [junit] |  |  |  R-9
+    [junit] |  |  |  |  R-4
+    [junit] |  |  |  |  |  R-5
+    [junit] |  |  |  R-10
     [junit] |  |  |  |  L-8
+    [junit] |  |  |  |  |  L-7
+    [junit] |  |  |  |  |  R-9
     [junit] |  |  |  |  R-11
-    [junit] |  |  |  |  |  L-10
-    [junit] |  |  |  |  |  R-12
-    [junit] |  |  R-16
-    [junit] |  |  |  L-14
-    [junit] |  |  |  |  R-15
-    [junit] |  |  |  R-18
-    [junit] |  |  |  |  L-17
-    [junit] |  |  |  |  R-19
-    [junit] |  R-32
-    [junit] |  |  L-27
-    [junit] |  |  |  L-23
-    [junit] |  |  |  |  L-22
-    [junit] |  |  |  |  |  L-21
-    [junit] |  |  |  |  R-25
-    [junit] |  |  |  |  |  L-24
-    [junit] |  |  |  |  |  R-26
-    [junit] |  |  |  R-29
-    [junit] |  |  |  |  L-28
-    [junit] |  |  |  |  R-31
-    [junit] |  |  |  |  |  L-30
-    [junit] |  |  R-40
-    [junit] |  |  |  L-36
-    [junit] |  |  |  |  L-34
-    [junit] |  |  |  |  |  L-33
-    [junit] |  |  |  |  |  R-35
-    [junit] |  |  |  |  R-38
+    [junit] |  |  R-18
+    [junit] |  |  |  L-15
+    [junit] |  |  |  |  L-14
+    [junit] |  |  |  |  |  L-13
+    [junit] |  |  |  |  R-16
+    [junit] |  |  |  |  |  R-17
+    [junit] |  |  |  R-22
+    [junit] |  |  |  |  L-20
+    [junit] |  |  |  |  |  L-19
+    [junit] |  |  |  |  |  R-21
+    [junit] |  |  |  |  R-23
+    [junit] |  |  |  |  |  R-24
+    [junit] |  R-36
+    [junit] |  |  L-31
+    [junit] |  |  |  L-28
+    [junit] |  |  |  |  L-27
+    [junit] |  |  |  |  |  L-26
+    [junit] |  |  |  |  R-30
+    [junit] |  |  |  |  |  L-29
+    [junit] |  |  |  R-33
+    [junit] |  |  |  |  L-32
+    [junit] |  |  |  |  R-35
+    [junit] |  |  |  |  |  L-34
+    [junit] |  |  R-44
+    [junit] |  |  |  L-39
+    [junit] |  |  |  |  L-38
     [junit] |  |  |  |  |  L-37
-    [junit] |  |  |  |  |  R-39
-    [junit] |  |  |  R-45
-    [junit] |  |  |  |  L-42
-    [junit] |  |  |  |  |  L-41
-    [junit] |  |  |  |  |  R-44
-    [junit] |  |  |  |  |  |  L-43
-    [junit] |  |  |  |  R-47
-    [junit] |  |  |  |  |  L-46
-    [junit] |  |  |  |  |  R-49
-    [junit] |  |  |  |  |  |  L-48
-    [junit] 
-    [junit] Root-58
+    [junit] |  |  |  |  R-41
+    [junit] |  |  |  |  |  L-40
+    [junit] |  |  |  |  |  R-43
+    [junit] |  |  |  |  |  |  L-42
+    [junit] |  |  |  R-47
+    [junit] |  |  |  |  L-46
+    [junit] |  |  |  |  |  L-45
+    [junit] |  |  |  |  R-49
+    [junit] |  |  |  |  |  L-48
     [junit] 
     [junit] Final Tree:
     [junit] Root-100
@@ -666,131 +391,13 @@ test:
     [junit] |  |  |  L-160
     [junit] |  |  |  R-190
     [junit] 
-    [junit] Root-43
-    [junit] |  L-19
-    [junit] |  |  L-10
-    [junit] |  |  |  L-5
-    [junit] |  |  |  |  L-2
-    [junit] |  |  |  |  |  L-0
-    [junit] |  |  |  |  |  |  R-1
-    [junit] |  |  |  |  |  R-4
-    [junit] |  |  |  |  |  |  L-3
-    [junit] |  |  |  |  R-8
-    [junit] |  |  |  |  |  L-7
-    [junit] |  |  |  |  |  |  L-6
-    [junit] |  |  |  |  |  R-9
-    [junit] |  |  |  R-13
-    [junit] |  |  |  |  L-11
-    [junit] |  |  |  |  |  R-12
-    [junit] |  |  |  |  R-16
-    [junit] |  |  |  |  |  L-15
-    [junit] |  |  |  |  |  |  L-14
-    [junit] |  |  |  |  |  R-18
-    [junit] |  |  |  |  |  |  L-17
-    [junit] |  |  R-29
-    [junit] |  |  |  L-23
-    [junit] |  |  |  |  L-21
-    [junit] |  |  |  |  |  L-20
-    [junit] |  |  |  |  |  R-22
-    [junit] |  |  |  |  R-25
-    [junit] |  |  |  |  |  L-24
-    [junit] |  |  |  |  |  R-27
-    [junit] |  |  |  |  |  |  L-26
-    [junit] |  |  |  |  |  |  R-28
-    [junit] |  |  |  R-36
-    [junit] |  |  |  |  L-33
-    [junit] |  |  |  |  |  L-31
-    [junit] |  |  |  |  |  |  L-30
-    [junit] |  |  |  |  |  |  R-32
-    [junit] |  |  |  |  |  R-35
-    [junit] |  |  |  |  |  |  L-34
-    [junit] |  |  |  |  R-40
-    [junit] |  |  |  |  |  L-38
-    [junit] |  |  |  |  |  |  L-37
-    [junit] |  |  |  |  |  |  R-39
-    [junit] |  |  |  |  |  R-42
-    [junit] |  |  |  |  |  |  L-41
-    [junit] |  R-84
-    [junit] |  |  L-61
-    [junit] |  |  |  L-53
-    [junit] |  |  |  |  L-50
-    [junit] |  |  |  |  |  L-46
-    [junit] |  |  |  |  |  |  L-44
-    [junit] |  |  |  |  |  |  |  R-45
-    [junit] |  |  |  |  |  |  R-48
-    [junit] |  |  |  |  |  |  |  L-47
-    [junit] |  |  |  |  |  |  |  R-49
-    [junit] |  |  |  |  |  R-52
-    [junit] |  |  |  |  |  |  L-51
-    [junit] |  |  |  |  R-56
-    [junit] |  |  |  |  |  L-54
-    [junit] |  |  |  |  |  |  R-55
-    [junit] |  |  |  |  |  R-59
-    [junit] |  |  |  |  |  |  L-58
-    [junit] |  |  |  |  |  |  |  L-57
-    [junit] |  |  |  |  |  |  R-60
-    [junit] |  |  |  R-73
-    [junit] |  |  |  |  L-65
-    [junit] |  |  |  |  |  L-63
-    [junit] |  |  |  |  |  |  L-62
-    [junit] |  |  |  |  |  |  R-64
-    [junit] |  |  |  |  |  R-69
-    [junit] |  |  |  |  |  |  L-67
-    [junit] |  |  |  |  |  |  |  L-66
-    [junit] |  |  |  |  |  |  |  R-68
-    [junit] |  |  |  |  |  |  R-71
-    [junit] |  |  |  |  |  |  |  L-70
-    [junit] |  |  |  |  |  |  |  R-72
-    [junit] |  |  |  |  R-79
-    [junit] |  |  |  |  |  L-75
-    [junit] |  |  |  |  |  |  L-74
-    [junit] |  |  |  |  |  |  R-77
-    [junit] |  |  |  |  |  |  |  L-76
-    [junit] |  |  |  |  |  |  |  R-78
-    [junit] |  |  |  |  |  R-81
-    [junit] |  |  |  |  |  |  L-80
-    [junit] |  |  |  |  |  |  R-83
-    [junit] |  |  |  |  |  |  |  L-82
-    [junit] |  |  R-100
-    [junit] |  |  |  L-92
-    [junit] |  |  |  |  L-87
-    [junit] |  |  |  |  |  L-85
-    [junit] |  |  |  |  |  |  R-86
-    [junit] |  |  |  |  |  R-90
-    [junit] |  |  |  |  |  |  L-88
-    [junit] |  |  |  |  |  |  |  R-89
-    [junit] |  |  |  |  |  |  R-91
-    [junit] |  |  |  |  R-96
-    [junit] |  |  |  |  |  L-94
-    [junit] |  |  |  |  |  |  L-93
-    [junit] |  |  |  |  |  |  R-95
-    [junit] |  |  |  |  |  R-98
-    [junit] |  |  |  |  |  |  L-97
-    [junit] |  |  |  |  |  |  R-99
-    [junit] |  |  |  R-107
-    [junit] |  |  |  |  L-103
-    [junit] |  |  |  |  |  L-101
-    [junit] |  |  |  |  |  |  R-102
-    [junit] |  |  |  |  |  R-105
-    [junit] |  |  |  |  |  |  L-104
-    [junit] |  |  |  |  |  |  R-106
-    [junit] |  |  |  |  R-111
-    [junit] |  |  |  |  |  L-109
-    [junit] |  |  |  |  |  |  L-108
-    [junit] |  |  |  |  |  |  R-110
-    [junit] |  |  |  |  |  R-113
-    [junit] |  |  |  |  |  |  L-112
-    [junit] |  |  |  |  |  |  R-114
-    [junit] 
     [junit] ------------- ---------------- ---------------
     [junit] 
-    [junit] Testcase: testViaSorting took 0.066 sec
+    [junit] Testcase: testViaSorting took 0.071 sec
     [junit] Testcase: testEmptyHeap took 0 sec
     [junit] Testcase: testAllRebalanceCases took 0 sec
-    [junit] Testcase: testAndPrint took 0.016 sec
-    [junit] Testcase: testInsertRoot took 0.009 sec
-    [junit] Testcase: testInsertWithoutRebalance took 0.001 sec
-    [junit] Testcase: testInsertWithRebalancing took 0.024 sec
+    [junit] Testcase: testAndPrint took 0.013 sec
+    [junit] Testcase: testInsertWithoutRebalance took 0.012 sec
 
 BUILD SUCCESSFUL
 Total time: 0 seconds
@@ -798,5 +405,5 @@ Total time: 0 seconds
 Lab is counted as working
 ================
 
-CSE247 Robot tester ends testing AVLTree on 2018-05-02 00:14:12 -0500
+CSE247 Robot tester ends testing AVLTree on 2018-05-02 14:24:54 -0500
 -------------------

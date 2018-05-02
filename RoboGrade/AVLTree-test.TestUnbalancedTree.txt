@@ -1,0 +1,509 @@
+-------------------
+CSE247 Robot tester starts testing AVLTree on 2018-05-02 12:01:20 -0500
+
+========
+Testing in ./GradingRepos/repos/cse247-s18-students-gdlaming: AVLTree as of 2018-04-26 00:05
+========
+Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming
+Your branch is up-to-date with 'origin/master'.
+HEAD is now at a206dbb last studio!
+No local changes to save
+
+Updating a206dbb..b66db57
+Fast-forward
+ RoboGrade/AVLTree-test.TestBalancedTree.txt | 802 ++++++++++++++++++++++++++++
+ 1 file changed, 802 insertions(+)
+ create mode 100644 RoboGrade/AVLTree-test.TestBalancedTree.txt
+Going back in time to: 2018-04-26 00:05
+At hash c5fdcce7c47e0fbd5ea44de808722e0527e75be2
+
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+copytest:
+     [echo] would copy from /Users/puneetsachdeva/git/cse247-s18-students key gdlaming testfilesource test/TestUnbalancedTree package AVLTree repo ./GradingRepos/repos/cse247-s18-students-gdlaming
+     [copy] Copying 1 file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming/labs/AVLTree/test
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Compiling the code
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/trees/AVLTree
+    [mkdir] Created dir: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming/bin
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming/bin
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/nodes/AVLTreeNode
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/test/TestUnbalancedTree
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming/bin
+    [javac] Note: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming/labs/AVLTree/validate/BSTValidator.java uses unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+BUILD SUCCESSFUL
+Total time: 1 second
+Running test test.TestUnbalancedTree
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+test:
+    [junit] Running AVLTree.test.TestUnbalancedTree
+    [junit] Testsuite: AVLTree.test.TestUnbalancedTree
+    [junit] Testing unique size 0
+    [junit] done
+    [junit] Testing unique size 1
+    [junit] done
+    [junit] Testing unique size 2
+    [junit] done
+    [junit] Testing unique size 3
+    [junit] done
+    [junit] Testing unique size 4
+    [junit] done
+    [junit] Testing unique size 5
+    [junit] done
+    [junit] Testing unique size 6
+    [junit] done
+    [junit] Testing unique size 7
+    [junit] done
+    [junit] Testing unique size 8
+    [junit] done
+    [junit] Testing unique size 9
+    [junit] done
+    [junit] Testing with duplicates size 0
+    [junit] done
+    [junit] Testing with duplicates size 1
+    [junit] done
+    [junit] Testing with duplicates size 2
+    [junit] done
+    [junit] Testing with duplicates size 3
+    [junit] done
+    [junit] Testing with duplicates size 4
+    [junit] done
+    [junit] Testing with duplicates size 5
+    [junit] done
+    [junit] Testing with duplicates size 6
+    [junit] done
+    [junit] Testing with duplicates size 7
+    [junit] done
+    [junit] Testing with duplicates size 8
+    [junit] done
+    [junit] Testing with duplicates size 9
+    [junit] done
+    [junit] Displaying a correct tree of 50 unique integers:
+    [junit] Root-33
+    [junit] |  L-29
+    [junit] |  |  L-16
+    [junit] |  |  |  L-13
+    [junit] |  |  |  |  L-10
+    [junit] |  |  |  |  |  L-9
+    [junit] |  |  |  |  |  |  L-5
+    [junit] |  |  |  |  |  |  |  L-2
+    [junit] |  |  |  |  |  |  |  |  L-0
+    [junit] |  |  |  |  |  |  |  |  |  R-1
+    [junit] |  |  |  |  |  |  |  |  R-4
+    [junit] |  |  |  |  |  |  |  |  |  L-3
+    [junit] |  |  |  |  |  |  |  R-8
+    [junit] |  |  |  |  |  |  |  |  L-6
+    [junit] |  |  |  |  |  |  |  |  |  R-7
+    [junit] |  |  |  |  |  R-11
+    [junit] |  |  |  |  |  |  R-12
+    [junit] |  |  |  |  R-14
+    [junit] |  |  |  |  |  R-15
+    [junit] |  |  |  R-20
+    [junit] |  |  |  |  L-19
+    [junit] |  |  |  |  |  L-17
+    [junit] |  |  |  |  |  |  R-18
+    [junit] |  |  |  |  R-28
+    [junit] |  |  |  |  |  L-22
+    [junit] |  |  |  |  |  |  L-21
+    [junit] |  |  |  |  |  |  R-24
+    [junit] |  |  |  |  |  |  |  L-23
+    [junit] |  |  |  |  |  |  |  R-27
+    [junit] |  |  |  |  |  |  |  |  L-25
+    [junit] |  |  |  |  |  |  |  |  |  R-26
+    [junit] |  |  R-31
+    [junit] |  |  |  L-30
+    [junit] |  |  |  R-32
+    [junit] |  R-38
+    [junit] |  |  L-34
+    [junit] |  |  |  R-36
+    [junit] |  |  |  |  L-35
+    [junit] |  |  |  |  R-37
+    [junit] |  |  R-39
+    [junit] |  |  |  R-42
+    [junit] |  |  |  |  L-41
+    [junit] |  |  |  |  |  L-40
+    [junit] |  |  |  |  R-48
+    [junit] |  |  |  |  |  L-44
+    [junit] |  |  |  |  |  |  L-43
+    [junit] |  |  |  |  |  |  R-47
+    [junit] |  |  |  |  |  |  |  L-45
+    [junit] |  |  |  |  |  |  |  |  R-46
+    [junit] |  |  |  |  |  R-49
+    [junit] 
+    [junit] Root-0
+    [junit] |  R-1
+    [junit] |  |  R-2
+    [junit] |  |  |  R-3
+    [junit] |  |  |  |  R-4
+    [junit] |  |  |  |  |  R-5
+    [junit] |  |  |  |  |  |  R-6
+    [junit] |  |  |  |  |  |  |  R-7
+    [junit] |  |  |  |  |  |  |  |  R-8
+    [junit] |  |  |  |  |  |  |  |  |  R-9
+    [junit] |  |  |  |  |  |  |  |  |  |  R-10
+    [junit] |  |  |  |  |  |  |  |  |  |  |  R-11
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  R-12
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  R-13
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-14
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-15
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-16
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-17
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-18
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-19
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-20
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-21
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-22
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-23
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-24
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-25
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-26
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-27
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-28
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-29
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-30
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-31
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-32
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-33
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-34
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-35
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-36
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-37
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-38
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-39
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-40
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-41
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-42
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-43
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-44
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-45
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-46
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-47
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-48
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-49
+    [junit] 
+    [junit] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 sec
+    [junit] Output:
+    [junit] Testing unique size 0
+    [junit] done
+    [junit] Testing unique size 1
+    [junit] done
+    [junit] Testing unique size 2
+    [junit] done
+    [junit] Testing unique size 3
+    [junit] done
+    [junit] Testing unique size 4
+    [junit] done
+    [junit] Testing unique size 5
+    [junit] done
+    [junit] Testing unique size 6
+    [junit] done
+    [junit] Testing unique size 7
+    [junit] done
+    [junit] Testing unique size 8
+    [junit] done
+    [junit] Testing unique size 9
+    [junit] done
+    [junit] Testing with duplicates size 0
+    [junit] done
+    [junit] Testing with duplicates size 1
+    [junit] done
+    [junit] Testing with duplicates size 2
+    [junit] done
+    [junit] Testing with duplicates size 3
+    [junit] done
+    [junit] Testing with duplicates size 4
+    [junit] done
+    [junit] Testing with duplicates size 5
+    [junit] done
+    [junit] Testing with duplicates size 6
+    [junit] done
+    [junit] Testing with duplicates size 7
+    [junit] done
+    [junit] Testing with duplicates size 8
+    [junit] done
+    [junit] Testing with duplicates size 9
+    [junit] done
+    [junit] Displaying a correct tree of 50 unique integers:
+    [junit] Root-33
+    [junit] |  L-29
+    [junit] |  |  L-16
+    [junit] |  |  |  L-13
+    [junit] |  |  |  |  L-10
+    [junit] |  |  |  |  |  L-9
+    [junit] |  |  |  |  |  |  L-5
+    [junit] |  |  |  |  |  |  |  L-2
+    [junit] |  |  |  |  |  |  |  |  L-0
+    [junit] |  |  |  |  |  |  |  |  |  R-1
+    [junit] |  |  |  |  |  |  |  |  R-4
+    [junit] |  |  |  |  |  |  |  |  |  L-3
+    [junit] |  |  |  |  |  |  |  R-8
+    [junit] |  |  |  |  |  |  |  |  L-6
+    [junit] |  |  |  |  |  |  |  |  |  R-7
+    [junit] |  |  |  |  |  R-11
+    [junit] |  |  |  |  |  |  R-12
+    [junit] |  |  |  |  R-14
+    [junit] |  |  |  |  |  R-15
+    [junit] |  |  |  R-20
+    [junit] |  |  |  |  L-19
+    [junit] |  |  |  |  |  L-17
+    [junit] |  |  |  |  |  |  R-18
+    [junit] |  |  |  |  R-28
+    [junit] |  |  |  |  |  L-22
+    [junit] |  |  |  |  |  |  L-21
+    [junit] |  |  |  |  |  |  R-24
+    [junit] |  |  |  |  |  |  |  L-23
+    [junit] |  |  |  |  |  |  |  R-27
+    [junit] |  |  |  |  |  |  |  |  L-25
+    [junit] |  |  |  |  |  |  |  |  |  R-26
+    [junit] |  |  R-31
+    [junit] |  |  |  L-30
+    [junit] |  |  |  R-32
+    [junit] |  R-38
+    [junit] |  |  L-34
+    [junit] |  |  |  R-36
+    [junit] |  |  |  |  L-35
+    [junit] |  |  |  |  R-37
+    [junit] |  |  R-39
+    [junit] |  |  |  R-42
+    [junit] |  |  |  |  L-41
+    [junit] |  |  |  |  |  L-40
+    [junit] |  |  |  |  R-48
+    [junit] |  |  |  |  |  L-44
+    [junit] |  |  |  |  |  |  L-43
+    [junit] |  |  |  |  |  |  R-47
+    [junit] |  |  |  |  |  |  |  L-45
+    [junit] |  |  |  |  |  |  |  |  R-46
+    [junit] |  |  |  |  |  R-49
+    [junit] 
+    [junit] Root-0
+    [junit] |  R-1
+    [junit] |  |  R-2
+    [junit] |  |  |  R-3
+    [junit] |  |  |  |  R-4
+    [junit] |  |  |  |  |  R-5
+    [junit] |  |  |  |  |  |  R-6
+    [junit] |  |  |  |  |  |  |  R-7
+    [junit] |  |  |  |  |  |  |  |  R-8
+    [junit] |  |  |  |  |  |  |  |  |  R-9
+    [junit] |  |  |  |  |  |  |  |  |  |  R-10
+    [junit] |  |  |  |  |  |  |  |  |  |  |  R-11
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  R-12
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  R-13
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-14
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-15
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-16
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-17
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-18
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-19
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-20
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-21
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-22
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-23
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-24
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-25
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-26
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-27
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-28
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-29
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-30
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-31
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-32
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-33
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-34
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-35
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-36
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-37
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-38
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-39
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-40
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-41
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-42
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-43
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-44
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-45
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-46
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-47
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-48
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-49
+    [junit] 
+    [junit] 
+    [junit] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 sec
+    [junit] ------------- Standard Output ---------------
+    [junit] Testing unique size 0
+    [junit] done
+    [junit] Testing unique size 1
+    [junit] done
+    [junit] Testing unique size 2
+    [junit] done
+    [junit] Testing unique size 3
+    [junit] done
+    [junit] Testing unique size 4
+    [junit] done
+    [junit] Testing unique size 5
+    [junit] done
+    [junit] Testing unique size 6
+    [junit] done
+    [junit] Testing unique size 7
+    [junit] done
+    [junit] Testing unique size 8
+    [junit] done
+    [junit] Testing unique size 9
+    [junit] done
+    [junit] Testing with duplicates size 0
+    [junit] done
+    [junit] Testing with duplicates size 1
+    [junit] done
+    [junit] Testing with duplicates size 2
+    [junit] done
+    [junit] Testing with duplicates size 3
+    [junit] done
+    [junit] Testing with duplicates size 4
+    [junit] done
+    [junit] Testing with duplicates size 5
+    [junit] done
+    [junit] Testing with duplicates size 6
+    [junit] done
+    [junit] Testing with duplicates size 7
+    [junit] done
+    [junit] Testing with duplicates size 8
+    [junit] done
+    [junit] Testing with duplicates size 9
+    [junit] done
+    [junit] Displaying a correct tree of 50 unique integers:
+    [junit] Root-33
+    [junit] |  L-29
+    [junit] |  |  L-16
+    [junit] |  |  |  L-13
+    [junit] |  |  |  |  L-10
+    [junit] |  |  |  |  |  L-9
+    [junit] |  |  |  |  |  |  L-5
+    [junit] |  |  |  |  |  |  |  L-2
+    [junit] |  |  |  |  |  |  |  |  L-0
+    [junit] |  |  |  |  |  |  |  |  |  R-1
+    [junit] |  |  |  |  |  |  |  |  R-4
+    [junit] |  |  |  |  |  |  |  |  |  L-3
+    [junit] |  |  |  |  |  |  |  R-8
+    [junit] |  |  |  |  |  |  |  |  L-6
+    [junit] |  |  |  |  |  |  |  |  |  R-7
+    [junit] |  |  |  |  |  R-11
+    [junit] |  |  |  |  |  |  R-12
+    [junit] |  |  |  |  R-14
+    [junit] |  |  |  |  |  R-15
+    [junit] |  |  |  R-20
+    [junit] |  |  |  |  L-19
+    [junit] |  |  |  |  |  L-17
+    [junit] |  |  |  |  |  |  R-18
+    [junit] |  |  |  |  R-28
+    [junit] |  |  |  |  |  L-22
+    [junit] |  |  |  |  |  |  L-21
+    [junit] |  |  |  |  |  |  R-24
+    [junit] |  |  |  |  |  |  |  L-23
+    [junit] |  |  |  |  |  |  |  R-27
+    [junit] |  |  |  |  |  |  |  |  L-25
+    [junit] |  |  |  |  |  |  |  |  |  R-26
+    [junit] |  |  R-31
+    [junit] |  |  |  L-30
+    [junit] |  |  |  R-32
+    [junit] |  R-38
+    [junit] |  |  L-34
+    [junit] |  |  |  R-36
+    [junit] |  |  |  |  L-35
+    [junit] |  |  |  |  R-37
+    [junit] |  |  R-39
+    [junit] |  |  |  R-42
+    [junit] |  |  |  |  L-41
+    [junit] |  |  |  |  |  L-40
+    [junit] |  |  |  |  R-48
+    [junit] |  |  |  |  |  L-44
+    [junit] |  |  |  |  |  |  L-43
+    [junit] |  |  |  |  |  |  R-47
+    [junit] |  |  |  |  |  |  |  L-45
+    [junit] |  |  |  |  |  |  |  |  R-46
+    [junit] |  |  |  |  |  R-49
+    [junit] 
+    [junit] Root-0
+    [junit] |  R-1
+    [junit] |  |  R-2
+    [junit] |  |  |  R-3
+    [junit] |  |  |  |  R-4
+    [junit] |  |  |  |  |  R-5
+    [junit] |  |  |  |  |  |  R-6
+    [junit] |  |  |  |  |  |  |  R-7
+    [junit] |  |  |  |  |  |  |  |  R-8
+    [junit] |  |  |  |  |  |  |  |  |  R-9
+    [junit] |  |  |  |  |  |  |  |  |  |  R-10
+    [junit] |  |  |  |  |  |  |  |  |  |  |  R-11
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  R-12
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  R-13
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-14
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-15
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-16
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-17
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-18
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-19
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-20
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-21
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-22
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-23
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-24
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-25
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-26
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-27
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-28
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-29
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-30
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-31
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-32
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-33
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-34
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-35
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-36
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-37
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-38
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-39
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-40
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-41
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-42
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-43
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-44
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-45
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-46
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-47
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-48
+    [junit] |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  R-49
+    [junit] 
+    [junit] ------------- ---------------- ---------------
+    [junit] 
+    [junit] Testcase: testViaSorting took 0.066 sec
+    [junit] Testcase: testEmptyHeap took 0 sec
+    [junit] Testcase: testAndPrint took 0.014 sec
+    [junit] Testcase: testInsert took 0.022 sec
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+================
+Lab is counted as working
+================
+
+CSE247 Robot tester ends testing AVLTree on 2018-05-02 12:01:28 -0500
+-------------------

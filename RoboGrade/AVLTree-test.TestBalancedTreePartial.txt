@@ -1,0 +1,139 @@
+-------------------
+CSE247 Robot tester starts testing AVLTree on 2018-05-03 00:50:52 -0500
+
+========
+Testing in ./GradingRepos/repos/cse247-s18-students-gdlaming: AVLTree as of 2018-04-26 00:05
+========
+Now in: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming
+Your branch is up-to-date with 'origin/master'.
+HEAD is now at fb4190f Merge remote-tracking branch 'upstream/master'
+No local changes to save
+
+Updating fb4190f..7cb9d54
+Fast-forward
+ RoboGrade/AVLTree-test.TestBalancedTree.txt    | 677 ++++++-------------------
+ labs/AVLTree/test/TestBalancedTree.java        |  36 +-
+ labs/AVLTree/test/TestBalancedTreePartial.java | 135 +++++
+ labs/AVLTree/test/TestUnbalancedTree.java      |  19 -
+ 4 files changed, 295 insertions(+), 572 deletions(-)
+ create mode 100644 labs/AVLTree/test/TestBalancedTreePartial.java
+Going back in time to: 2018-04-26 00:05
+At hash c5fdcce7c47e0fbd5ea44de808722e0527e75be2
+
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+copytest:
+     [echo] would copy from /Users/puneetsachdeva/git/cse247-s18-students key gdlaming testfilesource test/TestBalancedTreePartial package AVLTree repo ./GradingRepos/repos/cse247-s18-students-gdlaming
+     [copy] Copying 1 file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming/labs/AVLTree/test
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Compiling the code
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/trees/AVLTree
+    [mkdir] Created dir: /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming/bin
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming/bin
+
+BUILD SUCCESSFUL
+Total time: 1 second
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/nodes/AVLTreeNode
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+compile:
+     [echo] Compiling AVLTree/test/TestBalancedTreePartial
+    [javac] Compiling 1 source file to /Users/puneetsachdeva/cse247-support/GradingRepos/repos/cse247-s18-students-gdlaming/bin
+    [javac] Note: Some input files use unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+BUILD SUCCESSFUL
+Total time: 1 second
+Running test test.TestBalancedTreePartial
+Buildfile: /Users/puneetsachdeva/cse247-support/build.xml
+
+test:
+    [junit] Running AVLTree.test.TestBalancedTreePartial
+    [junit] Testsuite: AVLTree.test.TestBalancedTreePartial
+    [junit] Root-83
+    [junit] 
+    [junit] Final Tree:
+    [junit] Root-100
+    [junit] |  L-50
+    [junit] |  |  L-25
+    [junit] |  |  |  L-10
+    [junit] |  |  |  R-30
+    [junit] |  |  R-75
+    [junit] |  |  |  L-60
+    [junit] |  |  |  R-90
+    [junit] |  R-150
+    [junit] |  |  L-125
+    [junit] |  |  |  L-110
+    [junit] |  |  |  R-130
+    [junit] |  |  R-175
+    [junit] |  |  |  L-160
+    [junit] |  |  |  R-190
+    [junit] 
+    [junit] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.124 sec
+    [junit] Output:
+    [junit] Root-83
+    [junit] 
+    [junit] Final Tree:
+    [junit] Root-100
+    [junit] |  L-50
+    [junit] |  |  L-25
+    [junit] |  |  |  L-10
+    [junit] |  |  |  R-30
+    [junit] |  |  R-75
+    [junit] |  |  |  L-60
+    [junit] |  |  |  R-90
+    [junit] |  R-150
+    [junit] |  |  L-125
+    [junit] |  |  |  L-110
+    [junit] |  |  |  R-130
+    [junit] |  |  R-175
+    [junit] |  |  |  L-160
+    [junit] |  |  |  R-190
+    [junit] 
+    [junit] 
+    [junit] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.124 sec
+    [junit] ------------- Standard Output ---------------
+    [junit] Root-83
+    [junit] 
+    [junit] Final Tree:
+    [junit] Root-100
+    [junit] |  L-50
+    [junit] |  |  L-25
+    [junit] |  |  |  L-10
+    [junit] |  |  |  R-30
+    [junit] |  |  R-75
+    [junit] |  |  |  L-60
+    [junit] |  |  |  R-90
+    [junit] |  R-150
+    [junit] |  |  L-125
+    [junit] |  |  |  L-110
+    [junit] |  |  |  R-130
+    [junit] |  |  R-175
+    [junit] |  |  |  L-160
+    [junit] |  |  |  R-190
+    [junit] 
+    [junit] ------------- ---------------- ---------------
+    [junit] 
+    [junit] Testcase: testEmptyHeap took 0.003 sec
+    [junit] Testcase: testInsertRoot took 0.087 sec
+    [junit] Testcase: testInsertWithoutRebalance took 0.006 sec
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+================
+Lab is counted as working
+================
+
+CSE247 Robot tester ends testing AVLTree on 2018-05-03 00:51:00 -0500
+-------------------
